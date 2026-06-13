@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Check, Star, Target, Eye, Heart } from "lucide-react";
+import { BadgeCheck, Check, Clock3, Eye, Headphones, Heart, Star, Target, Users } from "lucide-react";
 import { SiteLayout, PageHero } from "@/components/SiteLayout";
 import { StarField } from "@/components/StarField";
 import { TESTIMONIALS, SITE } from "@/lib/site";
@@ -59,20 +59,30 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="relative py-20 bg-cosmos text-cosmos-foreground overflow-hidden">
+      <section className="relative py-24 bg-cosmos text-cosmos-foreground overflow-hidden">
         <StarField density={50} />
-        <div className="relative container mx-auto px-6 md:px-10 lg:px-16 grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/70 to-transparent" />
+        <div className="relative container mx-auto px-6 md:px-10 lg:px-16">
+          <div className="mb-14 text-center">
+            <span className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">A legacy of trust</span>
+            <h2 className="mt-3 font-display text-3xl font-bold md:text-4xl">Guidance That Makes a Difference</h2>
+          </div>
+          <div className="grid grid-cols-2 gap-x-4 gap-y-10 lg:grid-cols-4 lg:gap-7">
           {[
-            { num: "5000+", label: "Happy Clients" },
-            { num: "15+", label: "Years Experience" },
-            { num: "98%", label: "Success Rate" },
-            { num: "24/7", label: "Support" },
+            { icon: Users, num: "5000+", label: "Happy Clients" },
+            { icon: Clock3, num: "15+", label: "Years Experience" },
+            { icon: BadgeCheck, num: "98%", label: "Success Rate" },
+            { icon: Headphones, num: "24/7", label: "Support" },
           ].map(s => (
-            <div key={s.label} className="text-center">
-              <div className="font-display text-5xl md:text-6xl font-bold text-gradient-gold">{s.num}</div>
-              <div className="mt-2 text-sm uppercase tracking-wider text-white/70">{s.label}</div>
+            <div key={s.label} className="group relative rounded-2xl border border-cosmos-foreground/10 bg-cosmos-foreground/5 px-3 pb-7 pt-10 text-center backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-gold/50 hover:bg-cosmos-foreground/10 md:px-6 md:pb-9 md:pt-12">
+              <div className="absolute left-1/2 top-0 flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-gold/40 bg-cosmos text-gold shadow-glow md:h-14 md:w-14">
+                <s.icon className="h-5 w-5 md:h-6 md:w-6" strokeWidth={1.6} />
+              </div>
+              <div className="font-display text-4xl font-bold text-gradient-gold md:text-5xl lg:text-6xl">{s.num}</div>
+              <div className="mt-3 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-cosmos-foreground/70 md:text-xs md:tracking-[0.22em]">{s.label}</div>
             </div>
           ))}
+          </div>
         </div>
       </section>
 
