@@ -1,4 +1,4 @@
-import { Phone, MessageCircle, ArrowUp } from "lucide-react";
+import { Phone, MessageCircle, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
 import { SITE } from "@/lib/site";
 
