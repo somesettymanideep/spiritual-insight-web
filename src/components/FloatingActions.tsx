@@ -16,7 +16,7 @@ export function FloatingActions() {
     window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
-    <div className="fixed bottom-5 right-5 z-40 flex flex-col gap-3">
+    <div className="fixed bottom-5 right-5 z-40 flex flex-col gap-3 items-end">
       <button
         type="button"
         onClick={scrollTop}
@@ -34,9 +34,12 @@ export function FloatingActions() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="WhatsApp"
-        className="h-14 w-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-elegant animate-glow-pulse hover:scale-110 transition-transform"
+        className="group flex items-center gap-3 rounded-full bg-[#25D366] text-white shadow-elegant hover:scale-105 transition-transform pl-2 pr-5 py-2"
       >
-        <MessageCircle className="h-7 w-7" />
+        <span className="h-12 w-12 rounded-full bg-white/20 flex items-center justify-center animate-glow-pulse">
+          <MessageCircle className="h-7 w-7" />
+        </span>
+        <span className="font-bold text-base tracking-wide">WhatsApp</span>
       </a>
       <a
         href={SITE.phoneHref}
