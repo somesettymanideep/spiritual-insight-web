@@ -26,7 +26,7 @@ export function FloatingActions() {
         }`}
       >
         <span className="absolute inset-0 rounded-full animate-glow-pulse" aria-hidden />
-        <ArrowUp className="h-6 w-6 relative" />
+        <Sun className="h-6 w-6 relative" />
         <span className="sr-only">Back to top</span>
       </button>
       <a
