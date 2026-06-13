@@ -61,7 +61,7 @@ function ContactPage() {
 
       <section className="pb-20">
         <div className="container mx-auto px-6 md:px-10 lg:px-16">
-          <div className="rounded-3xl overflow-hidden shadow-elegant border border-border aspect-[16/9]">
+          <div className="rounded-3xl overflow-hidden shadow-elegant border border-border h-[500px]">
             <iframe
               title="Sri Durga Matha Astrology location"
               src="https://www.google.com/maps?q=Pedavegi,+Eluru,+Andhra+Pradesh+534003&output=embed"
