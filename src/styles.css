@@ -36,8 +36,6 @@
   --color-cosmos-foreground: var(--cosmos-foreground);
   --font-display: "Playfair Display", "Cinzel", serif;
   --font-sans: "Poppins", "Inter", system-ui, sans-serif;
-  --font-about-display: "DM Serif Display", serif;
-  --font-about-sans: "Fira Sans", sans-serif;
 }
 
 :root {
