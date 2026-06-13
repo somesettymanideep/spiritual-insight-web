@@ -21,36 +21,25 @@ function ContactPage() {
     <SiteLayout>
       <PageHero title="Contact Us" subtitle="We're here to help. Reach out for confidential astrology guidance anytime." />
 
-      <section className="py-20 bg-background text-foreground">
-        <div className="container mx-auto px-6 md:px-10 lg:px-16 mb-16">
-          <div className="text-center mb-14">
-            <h2 className="font-display text-3xl md:text-4xl text-primary mb-4 uppercase tracking-widest">Connect With Us</h2>
-            <div className="h-1 w-24 bg-gradient-to-r from-transparent via-gold to-transparent mx-auto"></div>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { icon: MapPin, title: "Visit Us", value: SITE.address },
-              { icon: Phone, title: "Call Us", value: SITE.phone, href: SITE.phoneHref },
-              { icon: Mail, title: "Email Us", value: SITE.email, href: `mailto:${SITE.email}` },
-            ].map(it => (
-              <div key={it.title} className="group relative pt-8">
-                <div className="absolute -top-0 left-1/2 -translate-x-1/2 z-10">
-                  <div className="w-14 h-14 rounded-full bg-gradient-primary flex items-center justify-center shadow-glow group-hover:scale-110 transition-transform duration-300">
-                    <it.icon className="h-6 w-6 text-primary-foreground" />
-                  </div>
-                </div>
-                <div className="rounded-2xl bg-card/80 border border-border backdrop-blur-md p-8 pt-12 shadow-elegant hover:border-gold/50 hover:bg-card transition-all duration-300 text-center">
-                  <h3 className="font-display text-xl font-semibold mb-3 text-primary">{it.title}</h3>
-                  {it.href ? (
-                    <a href={it.href} className="text-muted-foreground hover:text-primary break-words transition-colors">{it.value}</a>
-                  ) : (
-                    <p className="text-muted-foreground">{it.value}</p>
-                  )}
-                </div>
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-6 md:px-10 lg:px-16 grid lg:grid-cols-3 gap-6 mb-16">
+          {[
+            { icon: MapPin, title: "Visit Us", value: SITE.address },
+            { icon: Phone, title: "Call Us", value: SITE.phone, href: SITE.phoneHref },
+            { icon: Mail, title: "Email Us", value: SITE.email, href: `mailto:${SITE.email}` },
+          ].map(it => (
+            <div key={it.title} className="rounded-2xl bg-card border border-border p-7 shadow-card hover:-translate-y-1 transition-transform">
+              <div className="h-14 w-14 rounded-2xl bg-gradient-primary flex items-center justify-center shadow-glow mb-4">
+                <it.icon className="h-6 w-6 text-primary-foreground" />
               </div>
-            ))}
-          </div>
+              <h3 className="font-display text-xl font-semibold mb-2">{it.title}</h3>
+              {it.href ? (
+                <a href={it.href} className="text-muted-foreground hover:text-primary break-words">{it.value}</a>
+              ) : (
+                <p className="text-muted-foreground">{it.value}</p>
+              )}
+            </div>
+          ))}
         </div>
 
         <div className="container mx-auto px-6 md:px-10 lg:px-16 grid lg:grid-cols-2 gap-10 items-start">
