@@ -26,7 +26,7 @@ function ServicesPage() {
             {SERVICES.map((s, i) => (
               <article
                 key={s.slug}
-                className="group relative overflow-hidden rounded-3xl bg-card border border-border shadow-card hover:-translate-y-2 hover:shadow-elegant hover:border-primary/40 transition-all duration-500"
+                className="group relative overflow-hidden rounded-3xl bg-card border border-border shadow-card hover:-translate-y-2 hover:shadow-elegant hover:border-primary/40 transition-all duration-500 mb-6"
               >
                 <div className="relative h-44 overflow-hidden">
                   <img

@@ -173,7 +173,7 @@ function Services() {
           {SERVICES.map((s, i) => (
             <article
               key={s.slug}
-              className="group relative rounded-2xl bg-card shadow-card hover:-translate-y-2 hover:shadow-elegant transition-all duration-300 border border-transparent hover:border-primary/30 overflow-hidden"
+              className="group relative rounded-2xl bg-card shadow-card hover:-translate-y-2 hover:shadow-elegant transition-all duration-300 border border-transparent hover:border-primary/30 overflow-hidden mb-6"
               style={{ animationDelay: `${i * 0.05}s` }}
             >
               <div className="relative aspect-[4/3] overflow-hidden">
