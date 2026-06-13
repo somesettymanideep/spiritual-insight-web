@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import { Phone, Calendar, Check, Star, ArrowRight, ShieldCheck, Sparkles, Clock, Users } from "lucide-react";
+import { Phone, Calendar, Check, Star, ArrowRight, Sparkles, Clock, Users } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
 import { StarField } from "@/components/StarField";
 import { ConsultationForm } from "@/components/ConsultationForm";
@@ -201,9 +201,19 @@ function Services() {
   );
 }
 
+function ConfidentialIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg clipRule="evenodd" fillRule="evenodd" strokeLinejoin="round" strokeMiterlimit="2" viewBox="0 0 510 510" xmlns="http://www.w3.org/2000/svg" {...props}>
+      <g>
+        <path d="m200.766 85.811h-28.005v-9.676c0-33.622 27.513-61.135 61.135-61.135s61.11 27.513 61.11 61.135h-27.98c0-18.195-14.96-33.156-33.13-33.156s-33.13 14.961-33.13 33.156zm-148.488 409.189c4.949-46.085 43.953-81.978 91.337-81.978 47.408 0 86.412 35.893 91.337 81.978zm91.337-86.978c-25.579 0-46.428-20.874-46.428-46.452 0-25.579 20.849-46.453 46.428-46.453 25.602 0 46.452 20.874 46.452 46.453 0 25.578-20.85 46.452-46.452 46.452zm132.338 86.978c4.949-46.085 43.953-81.978 91.337-81.978 47.408 0 86.412 35.893 91.337 81.978zm91.337-86.978c-25.578 0-46.428-20.874-46.428-46.452 0-25.579 20.85-46.453 46.428-46.453 25.603 0 46.452 20.874 46.452 46.453 0 25.578-20.849 46.452-46.452 46.452zm-31.411-257.248v-37.808c0-7.037-2.701-13.474-7.128-18.312 1.662-.082 3.334-.123 5.015-.123 55.163 0 99.884 44.72 99.884 99.883 0 22.441-7.394 43.131-19.88 59.8l13.783 51.466-61.908-16.572c-10.021 3.34-20.723 5.189-31.879 5.189-30.498 0-57.805-13.67-76.126-35.218h51.083c13.21 0 24.219-9.435 26.654-21.933h44.796c4.416 0 8-3.585 8-8s-3.584-8-8-8h-44.294v-19.186h44.294c4.416 0 8-3.585 8-8 0-4.416-3.584-8-8-8h-44.294v-19.186h44.294c4.416 0 8-3.585 8-8 0-4.416-3.584-8-8-8zm-203.799 84.395c1.61 13.458 13.102 23.91 26.989 23.91h94.59c-3.946 6.052-10.783 10.061-18.526 10.061h-99.783l-43.208 44.979v-44.979h-18.68c-12.164 0-22.089-9.891-22.089-22.055v-110.643c0-12.164 9.925-22.089 22.089-22.089h58.426v34.74h-37.474c-4.415 0-8 3.585-8 8 0 4.416 3.585 8 8 8h37.474v19.055h-37.474c-4.415 0-8 3.584-8 8 0 4.415 3.585 8 8 8h37.474v19.021h-37.474c-4.415 0-8 3.584-8 8 0 4.415 3.585 8 8 8zm26.989-133.358h149.654c6.161 0 11.156 5.021 11.156 11.155v118.958c0 6.16-4.995 11.155-11.156 11.155h-149.654c-6.16 0-11.181-4.995-11.181-11.155v-118.958c0-6.134 5.021-11.155 11.181-11.155zm74.827 28.186c-12.009 0-21.767 9.758-21.767 21.768 0 7.842 4.141 14.701 10.353 18.532v33.182c0 6.289 5.125 11.414 11.414 11.414 6.264 0 11.415-5.125 11.415-11.414v-33.182c6.211-3.831 10.327-10.69 10.327-18.532 0-12.01-9.732-21.768-21.742-21.768z" fill="currentColor"/>
+      </g>
+    </svg>
+  );
+}
+
 function WhyChoose() {
   const items = [
-    { icon: ShieldCheck, title: "Confidential Consultations", desc: "Your privacy and trust are our top priority." },
+    { icon: ConfidentialIcon, title: "Confidential Consultations", desc: "Your privacy and trust are our top priority." },
     { icon: Sparkles, title: "Trusted Spiritual Guidance", desc: "Authentic remedies rooted in ancient wisdom." },
     { icon: Clock, title: "Quick Problem Solutions", desc: "Effective results within days of consultation." },
     { icon: Users, title: "24/7 Consultation Support", desc: "Available anytime you need guidance." },
