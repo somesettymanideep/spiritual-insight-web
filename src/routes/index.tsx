@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import { Phone, Calendar, Check, Star, ArrowRight, ShieldCheck, Sparkles, Clock, Users } from "lucide-react";
+import { Phone, Calendar, Check, Star, ArrowRight, Sparkles, Clock, Users } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
 import { StarField } from "@/components/StarField";
 import { ConsultationForm } from "@/components/ConsultationForm";
