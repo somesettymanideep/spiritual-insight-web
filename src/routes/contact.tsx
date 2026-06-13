@@ -21,10 +21,10 @@ function ContactPage() {
     <SiteLayout>
       <PageHero title="Contact Us" subtitle="We're here to help. Reach out for confidential astrology guidance anytime." />
 
-      <section className="py-20 bg-cosmos text-cosmos-foreground">
+      <section className="py-20 bg-background text-foreground">
         <div className="container mx-auto px-6 md:px-10 lg:px-16 mb-16">
           <div className="text-center mb-14">
-            <h2 className="font-display text-3xl md:text-4xl text-gold mb-4 uppercase tracking-widest">Connect With Us</h2>
+            <h2 className="font-display text-3xl md:text-4xl text-primary mb-4 uppercase tracking-widest">Connect With Us</h2>
             <div className="h-1 w-24 bg-gradient-to-r from-transparent via-gold to-transparent mx-auto"></div>
           </div>
 
@@ -40,12 +40,12 @@ function ContactPage() {
                     <it.icon className="h-6 w-6 text-primary-foreground" />
                   </div>
                 </div>
-                <div className="rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md p-8 pt-12 shadow-elegant hover:border-gold/50 hover:bg-white/10 transition-all duration-300 text-center">
-                  <h3 className="font-display text-xl font-semibold mb-3 text-gold">{it.title}</h3>
+                <div className="rounded-2xl bg-card/80 border border-border backdrop-blur-md p-8 pt-12 shadow-elegant hover:border-gold/50 hover:bg-card transition-all duration-300 text-center">
+                  <h3 className="font-display text-xl font-semibold mb-3 text-primary">{it.title}</h3>
                   {it.href ? (
-                    <a href={it.href} className="text-cosmos-foreground/70 hover:text-gold break-words transition-colors">{it.value}</a>
+                    <a href={it.href} className="text-muted-foreground hover:text-primary break-words transition-colors">{it.value}</a>
                   ) : (
-                    <p className="text-cosmos-foreground/70">{it.value}</p>
+                    <p className="text-muted-foreground">{it.value}</p>
                   )}
                 </div>
               </div>
