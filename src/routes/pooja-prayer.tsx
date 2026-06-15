@@ -1,7 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Phone, MessageCircle, Flame, BookOpen, Heart, Globe, Star, Sparkles } from "lucide-react";
+import { Phone, MessageCircle } from "lucide-react";
 import { SiteLayout, PageHero } from "@/components/SiteLayout";
 import { SITE } from "@/lib/site";
+import ganeshImage from "@/assets/pooja-ganesh.jpg";
+import durgaImage from "@/assets/pooja-durga.jpg";
+import kaliImage from "@/assets/pooja-kali.jpg";
+import fourCornerImage from "@/assets/pooja-four-corner.jpg";
+import shivaImage from "@/assets/pooja-shiva.jpg";
+import lakshmiImage from "@/assets/pooja-lakshmi.jpg";
+import internationalImage from "@/assets/pooja-international.jpg";
+import hanumanImage from "@/assets/pooja-hanuman.jpg";
+import customImage from "@/assets/pooja-custom.jpg";
 
 export const Route = createFileRoute("/pooja-prayer")({
   head: () => ({
@@ -19,47 +28,47 @@ const POOJA_SERVICES = [
   {
     title: "Lord Ganesh Puja",
     desc: "Remove obstacles and invite prosperity into your life with sacred Lord Ganesh worship rituals.",
-    icon: Sparkles,
+    image: ganeshImage,
   },
   {
     title: "Goddess Durga Matha Puja",
     desc: "Seek the divine blessings of Goddess Durga for strength, protection, and victory over negativity.",
-    icon: Flame,
+    image: durgaImage,
   },
   {
     title: "Goddess Kali Matha Puja",
     desc: "Powerful rituals dedicated to Goddess Kali to destroy evil forces and spiritual blockages.",
-    icon: Flame,
+    image: kaliImage,
   },
   {
     title: "Four Corner Prayer",
     desc: "Comprehensive spiritual ceremony performed at all four corners to cleanse and protect your space.",
-    icon: BookOpen,
+    image: fourCornerImage,
   },
   {
     title: "Lord Shiva Puja",
     desc: "Attain peace, health, and spiritual enlightenment through divine Lord Shiva worship.",
-    icon: Star,
+    image: shivaImage,
   },
   {
     title: "Goddess Lakshmi Puja",
     desc: "Invoke the goddess of wealth and abundance for financial prosperity and business success.",
-    icon: Heart,
+    image: lakshmiImage,
   },
   {
     title: "International Prayers",
     desc: "Remote prayer services available worldwide. Distance is no barrier to divine blessings.",
-    icon: Globe,
+    image: internationalImage,
   },
   {
     title: "Lord Hanuman",
     desc: "Gain courage, devotion, and protection through powerful Lord Hanuman rituals and prayers.",
-    icon: Flame,
+    image: hanumanImage,
   },
   {
     title: "Others",
     desc: "Custom pooja and prayer ceremonies tailored to your specific spiritual needs and intentions.",
-    icon: Sparkles,
+    image: customImage,
   },
 ];
 
@@ -84,17 +93,23 @@ function PoojaPrayerPage() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {POOJA_SERVICES.map((service, i) => {
-              const Icon = service.icon;
               return (
                 <article
                   key={service.title}
                   className="group relative overflow-hidden rounded-3xl bg-card border border-border shadow-card hover:-translate-y-2 hover:shadow-elegant hover:border-primary/40 transition-all duration-500"
                 >
+                  <div className="aspect-[4/3] overflow-hidden">
+                    <img
+                      src={service.image}
+                      alt={`${service.title} prayer service`}
+                      loading="lazy"
+                      width={768}
+                      height={960}
+                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  </div>
                   <div className="p-8">
-                    <div className="flex items-center gap-4 mb-5">
-                      <div className="flex items-center justify-center w-12 h-12 rounded-2xl bg-gradient-primary text-primary-foreground shadow-elegant">
-                        <Icon className="h-6 w-6" />
-                      </div>
+                    <div className="flex items-center gap-4 mb-4">
                       <span className="text-xs font-bold uppercase tracking-[0.2em] text-primary">
                         {String(i + 1).padStart(2, "0")}
                       </span>
