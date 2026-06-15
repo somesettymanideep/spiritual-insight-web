@@ -9,7 +9,6 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as SpiritualInsightWebRouteImport } from './routes/spiritual-insight-web'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PoojaPrayerRouteImport } from './routes/pooja-prayer'
 import { Route as ContactRouteImport } from './routes/contact'
@@ -20,11 +19,6 @@ import { Route as PoojaPrayerIndexRouteImport } from './routes/pooja-prayer.inde
 import { Route as ServicesSlugRouteImport } from './routes/services.$slug'
 import { Route as PoojaPrayerSlugRouteImport } from './routes/pooja-prayer.$slug'
 
-const SpiritualInsightWebRoute = SpiritualInsightWebRouteImport.update({
-  id: '/spiritual-insight-web',
-  path: '/spiritual-insight-web',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
@@ -77,7 +71,6 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/pooja-prayer': typeof PoojaPrayerRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/spiritual-insight-web': typeof SpiritualInsightWebRoute
   '/pooja-prayer/$slug': typeof PoojaPrayerSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/pooja-prayer/': typeof PoojaPrayerIndexRoute
@@ -88,7 +81,6 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/spiritual-insight-web': typeof SpiritualInsightWebRoute
   '/pooja-prayer/$slug': typeof PoojaPrayerSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/pooja-prayer': typeof PoojaPrayerIndexRoute
@@ -101,7 +93,6 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/pooja-prayer': typeof PoojaPrayerRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/spiritual-insight-web': typeof SpiritualInsightWebRoute
   '/pooja-prayer/$slug': typeof PoojaPrayerSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/pooja-prayer/': typeof PoojaPrayerIndexRoute
@@ -115,7 +106,6 @@ export interface FileRouteTypes {
     | '/contact'
     | '/pooja-prayer'
     | '/sitemap.xml'
-    | '/spiritual-insight-web'
     | '/pooja-prayer/$slug'
     | '/services/$slug'
     | '/pooja-prayer/'
@@ -126,7 +116,6 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/sitemap.xml'
-    | '/spiritual-insight-web'
     | '/pooja-prayer/$slug'
     | '/services/$slug'
     | '/pooja-prayer'
@@ -138,7 +127,6 @@ export interface FileRouteTypes {
     | '/contact'
     | '/pooja-prayer'
     | '/sitemap.xml'
-    | '/spiritual-insight-web'
     | '/pooja-prayer/$slug'
     | '/services/$slug'
     | '/pooja-prayer/'
@@ -151,20 +139,12 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   PoojaPrayerRoute: typeof PoojaPrayerRouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
-  SpiritualInsightWebRoute: typeof SpiritualInsightWebRoute
   ServicesSlugRoute: typeof ServicesSlugRoute
   ServicesIndexRoute: typeof ServicesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/spiritual-insight-web': {
-      id: '/spiritual-insight-web'
-      path: '/spiritual-insight-web'
-      fullPath: '/spiritual-insight-web'
-      preLoaderRoute: typeof SpiritualInsightWebRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/sitemap.xml': {
       id: '/sitemap.xml'
       path: '/sitemap.xml'
@@ -251,7 +231,6 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   PoojaPrayerRoute: PoojaPrayerRouteWithChildren,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
-  SpiritualInsightWebRoute: SpiritualInsightWebRoute,
   ServicesSlugRoute: ServicesSlugRoute,
   ServicesIndexRoute: ServicesIndexRoute,
 }
