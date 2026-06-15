@@ -4,6 +4,7 @@ import { Phone, Calendar, Check, Star, ArrowRight, Sparkles, Clock, Users } from
 import { SiteLayout } from "@/components/SiteLayout";
 import { StarField } from "@/components/StarField";
 import { ConsultationForm } from "@/components/ConsultationForm";
+import { AutoCarousel } from "@/components/AutoCarousel";
 import { SITE, SERVICES, TESTIMONIALS } from "@/lib/site";
 import { asset, setMeta } from "@/lib/utils";
 
