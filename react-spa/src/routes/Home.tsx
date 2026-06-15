@@ -216,6 +216,36 @@ function Stats() {
 }
 
 function Testimonials() {
+  const [index, setIndex] = useState(0);
+  const [perView, setPerView] = useState(3);
+
+  useEffect(() => {
+    const update = () => {
+      const w = window.innerWidth;
+      setPerView(w < 768 ? 1 : w < 1024 ? 2 : 3);
+    };
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
+  const total = TESTIMONIALS.length;
+  const maxIndex = Math.max(0, total - perView);
+
+  useEffect(() => {
+    if (index > maxIndex) setIndex(0);
+  }, [maxIndex, index]);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setIndex((i) => (i >= maxIndex ? 0 : i + 1));
+    }, 4500);
+    return () => clearInterval(id);
+  }, [maxIndex]);
+
+  const slideWidth = 100 / perView;
+  const translate = -(index * slideWidth);
+
   return (
     <section className="py-20 md:py-28 bg-muted">
       <div className="container mx-auto px-6 md:px-10 lg:px-16">
@@ -225,26 +255,47 @@ function Testimonials() {
             Voices of <span className="text-gradient-primary">Transformed Lives</span>
           </h2>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
-          {TESTIMONIALS.map((t) => (
-            <div key={t.name} className="h-full glass-light rounded-2xl p-7 shadow-card hover:shadow-elegant transition-shadow">
-              <div className="flex gap-1 text-gold mb-4">
-                {Array.from({ length: t.rating }).map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-current" />
-                ))}
-              </div>
-              <p className="text-foreground/80 italic leading-relaxed mb-5">"{t.text}"</p>
-              <div className="flex items-center gap-3">
-                <div className="h-12 w-12 rounded-full bg-gradient-primary text-primary-foreground flex items-center justify-center font-display font-bold text-lg">
-                  {t.name.charAt(0)}
+        <div className="relative max-w-6xl mx-auto">
+          <div className="overflow-hidden">
+            <div
+              className="flex transition-transform duration-700 ease-in-out"
+              style={{ transform: `translateX(${translate}%)` }}
+            >
+              {TESTIMONIALS.map((t) => (
+                <div key={t.name} className="shrink-0 px-2.5" style={{ width: `${slideWidth}%` }}>
+                  <div className="h-full glass-light rounded-2xl p-7 shadow-card hover:shadow-elegant transition-shadow">
+                    <div className="flex gap-1 text-gold mb-4">
+                      {Array.from({ length: t.rating }).map((_, i) => (
+                        <Star key={i} className="h-4 w-4 fill-current" />
+                      ))}
+                    </div>
+                    <p className="text-foreground/80 italic leading-relaxed mb-5">"{t.text}"</p>
+                    <div className="flex items-center gap-3">
+                      <div className="h-12 w-12 rounded-full bg-gradient-primary text-primary-foreground flex items-center justify-center font-display font-bold text-lg">
+                        {t.name.charAt(0)}
+                      </div>
+                      <div>
+                        <div className="font-semibold text-foreground">{t.name}</div>
+                        <div className="text-xs text-muted-foreground">{t.role}</div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <div className="font-semibold text-foreground">{t.name}</div>
-                  <div className="text-xs text-muted-foreground">{t.role}</div>
-                </div>
-              </div>
+              ))}
             </div>
-          ))}
+          </div>
+          <div className="flex justify-center gap-2 mt-8">
+            {Array.from({ length: maxIndex + 1 }).map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setIndex(i)}
+                aria-label={`Go to slide ${i + 1}`}
+                className={`h-2.5 rounded-full transition-all ${
+                  i === index ? "w-8 bg-primary" : "w-2.5 bg-primary/30 hover:bg-primary/50"
+                }`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
