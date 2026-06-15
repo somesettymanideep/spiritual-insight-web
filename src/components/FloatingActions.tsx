@@ -45,7 +45,7 @@ export function FloatingActions() {
         className="group flex items-center gap-3 rounded-full bg-[#25D366] text-white shadow-elegant hover:scale-105 transition-transform pl-2 pr-5 py-2"
       >
         <span className="h-12 w-12 rounded-full bg-white/20 flex items-center justify-center animate-glow-pulse">
-          <MessageCircle className="h-7 w-7" />
+          <WhatsAppIcon className="h-7 w-7" />
         </span>
         <span className="font-bold text-base tracking-wide">WhatsApp</span>
       </a>
