@@ -7,6 +7,7 @@ import { ConsultationForm } from "@/components/ConsultationForm";
 import { SITE, SERVICES, TESTIMONIALS } from "@/lib/site";
 import aboutImg from "@/assets/about-astrologer.jpg";
 import jupiterAsset from "@/assets/jupiter.webp.asset.json";
+import solarSystemVideo from "@/assets/solar-system-stats.mp4.asset.json";
 import ctaBg from "@/assets/cta-cosmic-bg.jpg";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
@@ -254,8 +255,18 @@ function Stats() {
   ];
   return (
     <section className="relative py-20 bg-cosmos text-cosmos-foreground overflow-hidden">
-      <StarField density={50} />
-      <div className="absolute inset-0 opacity-40" style={{ background: "var(--gradient-radial)" }} />
+      <video
+        src={solarSystemVideo.url}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        aria-hidden="true"
+        className="absolute inset-0 h-full w-full object-cover"
+      />
+      <div className="absolute inset-0 bg-cosmos/55" />
+      <div className="absolute inset-0 bg-gradient-to-b from-cosmos/20 via-transparent to-cosmos/35" />
       <div className="relative container mx-auto px-6 md:px-10 lg:px-16 grid grid-cols-2 lg:grid-cols-4 gap-8">
         {stats.map((s) => (
           <div key={s.label} className="text-center">
