@@ -16,6 +16,7 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
 import { Route as ServicesSlugRouteImport } from './routes/services.$slug'
+import { Route as PoojaPrayerSlugRouteImport } from './routes/pooja-prayer.$slug'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
@@ -52,13 +53,19 @@ const ServicesSlugRoute = ServicesSlugRouteImport.update({
   path: '/services/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PoojaPrayerSlugRoute = PoojaPrayerSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => PoojaPrayerRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/pooja-prayer': typeof PoojaPrayerRoute
+  '/pooja-prayer': typeof PoojaPrayerRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/pooja-prayer/$slug': typeof PoojaPrayerSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/services/': typeof ServicesIndexRoute
 }
@@ -66,8 +73,9 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/pooja-prayer': typeof PoojaPrayerRoute
+  '/pooja-prayer': typeof PoojaPrayerRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/pooja-prayer/$slug': typeof PoojaPrayerSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/services': typeof ServicesIndexRoute
 }
@@ -76,8 +84,9 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/pooja-prayer': typeof PoojaPrayerRoute
+  '/pooja-prayer': typeof PoojaPrayerRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/pooja-prayer/$slug': typeof PoojaPrayerSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/services/': typeof ServicesIndexRoute
 }
@@ -89,6 +98,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/pooja-prayer'
     | '/sitemap.xml'
+    | '/pooja-prayer/$slug'
     | '/services/$slug'
     | '/services/'
   fileRoutesByTo: FileRoutesByTo
@@ -98,6 +108,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/pooja-prayer'
     | '/sitemap.xml'
+    | '/pooja-prayer/$slug'
     | '/services/$slug'
     | '/services'
   id:
@@ -107,6 +118,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/pooja-prayer'
     | '/sitemap.xml'
+    | '/pooja-prayer/$slug'
     | '/services/$slug'
     | '/services/'
   fileRoutesById: FileRoutesById
@@ -115,7 +127,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
-  PoojaPrayerRoute: typeof PoojaPrayerRoute
+  PoojaPrayerRoute: typeof PoojaPrayerRouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   ServicesSlugRoute: typeof ServicesSlugRoute
   ServicesIndexRoute: typeof ServicesIndexRoute
@@ -172,14 +184,33 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/pooja-prayer/$slug': {
+      id: '/pooja-prayer/$slug'
+      path: '/$slug'
+      fullPath: '/pooja-prayer/$slug'
+      preLoaderRoute: typeof PoojaPrayerSlugRouteImport
+      parentRoute: typeof PoojaPrayerRoute
+    }
   }
 }
+
+interface PoojaPrayerRouteChildren {
+  PoojaPrayerSlugRoute: typeof PoojaPrayerSlugRoute
+}
+
+const PoojaPrayerRouteChildren: PoojaPrayerRouteChildren = {
+  PoojaPrayerSlugRoute: PoojaPrayerSlugRoute,
+}
+
+const PoojaPrayerRouteWithChildren = PoojaPrayerRoute._addFileChildren(
+  PoojaPrayerRouteChildren,
+)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
-  PoojaPrayerRoute: PoojaPrayerRoute,
+  PoojaPrayerRoute: PoojaPrayerRouteWithChildren,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   ServicesSlugRoute: ServicesSlugRoute,
   ServicesIndexRoute: ServicesIndexRoute,

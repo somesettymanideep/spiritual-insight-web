@@ -74,7 +74,7 @@ function PoojaServiceDetailPage() {
             <p className="mb-8 text-lg leading-relaxed text-muted-foreground">{service.overview}</p>
             <h3 className="mb-4 font-display text-2xl font-semibold">Benefits of This Service</h3>
             <ul className="mb-9 grid gap-3 sm:grid-cols-2">
-              {service.benefits.map((benefit) => (
+              {service.benefits.map((benefit: string) => (
                 <li key={benefit} className="flex items-start gap-3 rounded-xl border border-border bg-card p-4">
                   <Check className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
                   <span className="text-sm text-foreground">{benefit}</span>
