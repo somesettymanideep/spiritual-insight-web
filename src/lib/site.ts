@@ -1,8 +1,8 @@
 export const SITE = {
   name: "Sri Durga Matha Astrology",
-  phone: "9000999664",
-  phoneHref: "tel:+919000999664",
-  whatsapp: "https://wa.me/919000999664",
+  phone: "8074668253",
+  phoneHref: "tel:+918074668253",
+  whatsapp: "https://wa.me/918074668253",
   email: "vooralakshmibhavani703@gmail.com",
   address: "2-149 Jangalapeta Block, Pedavegi, Sanivarapupeta, Eluru, Andhra Pradesh – 534003",
 };

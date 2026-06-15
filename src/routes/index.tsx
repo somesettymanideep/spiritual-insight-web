@@ -16,7 +16,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Sri Durga Matha Astrology — Trusted Astrologer in Eluru" },
-      { name: "description", content: "Get accurate predictions and effective spiritual remedies for love, marriage, career & black magic removal. Call 9000999664." },
+      { name: "description", content: "Get accurate predictions and effective spiritual remedies for love, marriage, career & black magic removal. Call 8074668253." },
       { property: "og:title", content: "Sri Durga Matha Astrology" },
       { property: "og:description", content: "Trusted astrology solutions for love, marriage, career & spiritual guidance." },
     ],
