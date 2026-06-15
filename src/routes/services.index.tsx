@@ -7,7 +7,7 @@ export const Route = createFileRoute("/services/")({
   head: () => ({
     meta: [
       { title: "Astrology Services — Sri Durga Matha Astrology" },
-      { name: "description", content: "Explore our astrology services: black magic removal, love marriage, vashikaran, palm reading, tarot, and more. Call 9000999664." },
+      { name: "description", content: "Explore our astrology services: black magic removal, love marriage, vashikaran, palm reading, tarot, and more. Call 8074668253." },
       { property: "og:title", content: "Our Astrology Services" },
       { property: "og:description", content: "Authentic spiritual solutions for love, marriage, career & protection." },
     ],
