@@ -337,9 +337,17 @@ function Consultation() {
 
 function CTABanner() {
   return (
-    <section className="relative py-20 bg-cosmos text-primary-foreground overflow-hidden">
-      <img src={ctaBg} alt="" aria-hidden="true" loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
-      <div className="absolute inset-0 bg-gradient-to-r from-cosmos/85 via-primary/70 to-cosmos/85" />
+    <section className="relative py-20 bg-primary text-primary-foreground overflow-hidden">
+      <video
+        src={ctaVideoAsset.url}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        className="absolute inset-0 h-full w-full object-cover opacity-40"
+      />
+      <div className="absolute inset-0 bg-primary/70" />
       <StarField density={40} />
       <div className="relative container mx-auto px-6 md:px-10 lg:px-16 text-center max-w-3xl">
         <h2 className="font-display text-3xl md:text-5xl font-bold mb-4">Need Immediate Astrology Guidance?</h2>
