@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { POOJA_SERVICES } from "@/lib/pooja-services";
 import { SITE } from "@/lib/site";
 
-export const Route = createFileRoute("/pooja-prayer")({
+export const Route = createFileRoute("/pooja-prayer/")({
   head: () => ({
     meta: [
       { title: "Pooja & Prayer Services — Sri Durga Matha Astrology" },
