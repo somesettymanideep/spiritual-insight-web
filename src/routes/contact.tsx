@@ -8,7 +8,7 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact Us — Sri Durga Matha Astrology" },
-      { name: "description", content: "Contact Sri Durga Matha Astrology in Eluru, Andhra Pradesh. Call 9000999664 or send us a message." },
+      { name: "description", content: "Contact Sri Durga Matha Astrology in Eluru, Andhra Pradesh. Call 8074668253 or send us a message." },
       { property: "og:title", content: "Contact Sri Durga Matha Astrology" },
       { property: "og:description", content: "Reach our astrologer in Eluru for confidential spiritual guidance." },
     ],
