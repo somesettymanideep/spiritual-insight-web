@@ -1,1 +1,0 @@
-import{s as e}from"./SiteLayout-XK4N6m1a.js";var t=e(`check`,[[`path`,{d:`M20 6 9 17l-5-5`,key:`1gmf2c`}]]);export{t};
