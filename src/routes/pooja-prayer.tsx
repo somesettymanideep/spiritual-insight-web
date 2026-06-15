@@ -1,16 +1,9 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { Phone, MessageCircle } from "lucide-react";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { Phone, MessageCircle, ArrowRight } from "lucide-react";
 import { SiteLayout, PageHero } from "@/components/SiteLayout";
+import { Button } from "@/components/ui/button";
+import { POOJA_SERVICES } from "@/lib/pooja-services";
 import { SITE } from "@/lib/site";
-import ganeshImage from "@/assets/pooja-ganesh.jpg";
-import durgaImage from "@/assets/pooja-durga.jpg";
-import kaliImage from "@/assets/pooja-kali.jpg";
-import fourCornerImage from "@/assets/pooja-four-corner.jpg";
-import shivaImage from "@/assets/pooja-shiva.jpg";
-import lakshmiImage from "@/assets/pooja-lakshmi.jpg";
-import internationalImage from "@/assets/pooja-international.jpg";
-import hanumanImage from "@/assets/pooja-hanuman.jpg";
-import customImage from "@/assets/pooja-custom.jpg";
 
 export const Route = createFileRoute("/pooja-prayer")({
   head: () => ({
@@ -23,54 +16,6 @@ export const Route = createFileRoute("/pooja-prayer")({
   }),
   component: PoojaPrayerPage,
 });
-
-const POOJA_SERVICES = [
-  {
-    title: "Lord Ganesh Puja",
-    desc: "Remove obstacles and invite prosperity into your life with sacred Lord Ganesh worship rituals.",
-    image: ganeshImage,
-  },
-  {
-    title: "Goddess Durga Matha Puja",
-    desc: "Seek the divine blessings of Goddess Durga for strength, protection, and victory over negativity.",
-    image: durgaImage,
-  },
-  {
-    title: "Goddess Kali Matha Puja",
-    desc: "Powerful rituals dedicated to Goddess Kali to destroy evil forces and spiritual blockages.",
-    image: kaliImage,
-  },
-  {
-    title: "Four Corner Prayer",
-    desc: "Comprehensive spiritual ceremony performed at all four corners to cleanse and protect your space.",
-    image: fourCornerImage,
-  },
-  {
-    title: "Lord Shiva Puja",
-    desc: "Attain peace, health, and spiritual enlightenment through divine Lord Shiva worship.",
-    image: shivaImage,
-  },
-  {
-    title: "Goddess Lakshmi Puja",
-    desc: "Invoke the goddess of wealth and abundance for financial prosperity and business success.",
-    image: lakshmiImage,
-  },
-  {
-    title: "International Prayers",
-    desc: "Remote prayer services available worldwide. Distance is no barrier to divine blessings.",
-    image: internationalImage,
-  },
-  {
-    title: "Lord Hanuman",
-    desc: "Gain courage, devotion, and protection through powerful Lord Hanuman rituals and prayers.",
-    image: hanumanImage,
-  },
-  {
-    title: "Others",
-    desc: "Custom pooja and prayer ceremonies tailored to your specific spiritual needs and intentions.",
-    image: customImage,
-  },
-];
 
 function PoojaPrayerPage() {
   return (
@@ -114,12 +59,14 @@ function PoojaPrayerPage() {
                         {String(i + 1).padStart(2, "0")}
                       </span>
                     </div>
-                    <h3 className="font-display text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
+                    <h3 className="font-display text-xl font-semibold mb-5 group-hover:text-primary transition-colors">
                       {service.title}
                     </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {service.desc}
-                    </p>
+                    <Button asChild className="rounded-full">
+                      <Link to="/pooja-prayer/$slug" params={{ slug: service.slug }}>
+                        Read More <ArrowRight className="h-4 w-4" />
+                      </Link>
+                    </Button>
                   </div>
                 </article>
               );
