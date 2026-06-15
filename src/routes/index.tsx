@@ -7,7 +7,7 @@ import { ConsultationForm } from "@/components/ConsultationForm";
 import { SITE, SERVICES, TESTIMONIALS } from "@/lib/site";
 import aboutImg from "@/assets/about-astrologer.jpg";
 import jupiterAsset from "@/assets/jupiter.webp.asset.json";
-import ctaBg from "@/assets/cta-cosmic-bg.jpg";
+import ctaVideoAsset from "@/assets/cta-video.mp4.asset.json";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 const HERO_VIDEO = "https://res.cloudinary.com/dzj6s8hha/video/upload/v1781334801/banner-bg_i2dyhl.mp4";
