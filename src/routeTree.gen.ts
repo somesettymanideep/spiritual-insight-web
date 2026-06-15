@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as PoojaPrayerRouteImport } from './routes/pooja-prayer'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
@@ -21,6 +22,11 @@ import { Route as PoojaPrayerSlugRouteImport } from './routes/pooja-prayer.$slug
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PoojaPrayerRoute = PoojaPrayerRouteImport.update({
+  id: '/pooja-prayer',
+  path: '/pooja-prayer',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -44,9 +50,9 @@ const ServicesIndexRoute = ServicesIndexRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 const PoojaPrayerIndexRoute = PoojaPrayerIndexRouteImport.update({
-  id: '/pooja-prayer/',
-  path: '/pooja-prayer/',
-  getParentRoute: () => rootRouteImport,
+  id: '/',
+  path: '/',
+  getParentRoute: () => PoojaPrayerRoute,
 } as any)
 const ServicesSlugRoute = ServicesSlugRouteImport.update({
   id: '/services/$slug',
@@ -54,15 +60,16 @@ const ServicesSlugRoute = ServicesSlugRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 const PoojaPrayerSlugRoute = PoojaPrayerSlugRouteImport.update({
-  id: '/pooja-prayer/$slug',
-  path: '/pooja-prayer/$slug',
-  getParentRoute: () => rootRouteImport,
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => PoojaPrayerRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/pooja-prayer': typeof PoojaPrayerRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/pooja-prayer/$slug': typeof PoojaPrayerSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
@@ -84,6 +91,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/pooja-prayer': typeof PoojaPrayerRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/pooja-prayer/$slug': typeof PoojaPrayerSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
@@ -96,6 +104,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/pooja-prayer'
     | '/sitemap.xml'
     | '/pooja-prayer/$slug'
     | '/services/$slug'
@@ -116,6 +125,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/pooja-prayer'
     | '/sitemap.xml'
     | '/pooja-prayer/$slug'
     | '/services/$slug'
@@ -127,10 +137,9 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
+  PoojaPrayerRoute: typeof PoojaPrayerRouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
-  PoojaPrayerSlugRoute: typeof PoojaPrayerSlugRoute
   ServicesSlugRoute: typeof ServicesSlugRoute
-  PoojaPrayerIndexRoute: typeof PoojaPrayerIndexRoute
   ServicesIndexRoute: typeof ServicesIndexRoute
 }
 
@@ -141,6 +150,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pooja-prayer': {
+      id: '/pooja-prayer'
+      path: '/pooja-prayer'
+      fullPath: '/pooja-prayer'
+      preLoaderRoute: typeof PoojaPrayerRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -173,10 +189,10 @@ declare module '@tanstack/react-router' {
     }
     '/pooja-prayer/': {
       id: '/pooja-prayer/'
-      path: '/pooja-prayer'
+      path: '/'
       fullPath: '/pooja-prayer/'
       preLoaderRoute: typeof PoojaPrayerIndexRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof PoojaPrayerRoute
     }
     '/services/$slug': {
       id: '/services/$slug'
@@ -187,22 +203,35 @@ declare module '@tanstack/react-router' {
     }
     '/pooja-prayer/$slug': {
       id: '/pooja-prayer/$slug'
-      path: '/pooja-prayer/$slug'
+      path: '/$slug'
       fullPath: '/pooja-prayer/$slug'
       preLoaderRoute: typeof PoojaPrayerSlugRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof PoojaPrayerRoute
     }
   }
 }
+
+interface PoojaPrayerRouteChildren {
+  PoojaPrayerSlugRoute: typeof PoojaPrayerSlugRoute
+  PoojaPrayerIndexRoute: typeof PoojaPrayerIndexRoute
+}
+
+const PoojaPrayerRouteChildren: PoojaPrayerRouteChildren = {
+  PoojaPrayerSlugRoute: PoojaPrayerSlugRoute,
+  PoojaPrayerIndexRoute: PoojaPrayerIndexRoute,
+}
+
+const PoojaPrayerRouteWithChildren = PoojaPrayerRoute._addFileChildren(
+  PoojaPrayerRouteChildren,
+)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
+  PoojaPrayerRoute: PoojaPrayerRouteWithChildren,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
-  PoojaPrayerSlugRoute: PoojaPrayerSlugRoute,
   ServicesSlugRoute: ServicesSlugRoute,
-  PoojaPrayerIndexRoute: PoojaPrayerIndexRoute,
   ServicesIndexRoute: ServicesIndexRoute,
 }
 export const routeTree = rootRouteImport
