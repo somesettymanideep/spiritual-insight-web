@@ -37,7 +37,7 @@ function Hero() {
     <section className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden bg-cosmos text-cosmos-foreground">
       <video src={HERO_VIDEO} autoPlay muted loop playsInline preload="auto" className="absolute inset-0 h-full w-full object-cover" />
       <div className="absolute inset-0 bg-gradient-to-r from-cosmos/85 via-cosmos/60 to-transparent" />
-      <div className="relative container mx-auto px-6 md:px-10 lg:px-16">
+      <div className="relative site-container">
         <div className="space-y-6 animate-fade-up max-w-2xl text-left">
           <span className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs font-medium tracking-wider uppercase text-gold">
             <Sparkles className="h-3.5 w-3.5" /> Trusted Spiritual Guidance
@@ -84,7 +84,7 @@ function About() {
   }, []);
   return (
     <section className="py-20 md:py-28 bg-background relative overflow-hidden">
-      <div className="relative z-10 container mx-auto px-6 md:px-10 lg:px-16 grid lg:grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 site-container grid lg:grid-cols-2 gap-12 items-center">
         <div className="relative">
           <div className="absolute -inset-4 bg-gradient-primary opacity-20 blur-3xl rounded-full" />
           <div className="relative rounded-3xl overflow-hidden shadow-elegant aspect-[4/5]">
@@ -130,7 +130,7 @@ function Services() {
   return (
     <section className="py-20 md:py-28 bg-muted relative overflow-hidden">
       <div className="absolute inset-0 opacity-30" style={{ background: "var(--gradient-radial)" }} />
-      <div className="relative container mx-auto px-6 md:px-10 lg:px-16">
+      <div className="relative site-container">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">What We Offer</span>
           <h2 className="font-display text-3xl md:text-5xl font-bold mt-2">
@@ -172,7 +172,7 @@ function WhyChoose() {
   ];
   return (
     <section className="py-20 md:py-28 bg-background">
-      <div className="container mx-auto px-6 md:px-10 lg:px-16">
+      <div className="site-container">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Why Choose Us</span>
           <h2 className="font-display text-3xl md:text-5xl font-bold mt-2">
@@ -206,7 +206,7 @@ function Stats() {
     <section className="relative py-20 bg-cosmos text-cosmos-foreground overflow-hidden">
       <StarField density={50} />
       <div className="absolute inset-0 opacity-40" style={{ background: "var(--gradient-radial)" }} />
-      <div className="relative container mx-auto px-6 md:px-10 lg:px-16 grid grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="relative site-container grid grid-cols-2 lg:grid-cols-4 gap-8">
         {stats.map((s) => (
           <div key={s.label} className="text-center">
             <div className="font-display text-5xl md:text-6xl font-bold text-gradient-gold">{s.num}</div>
@@ -221,7 +221,7 @@ function Stats() {
 function Testimonials() {
   return (
     <section className="py-20 md:py-28 bg-muted">
-      <div className="container mx-auto px-6 md:px-10 lg:px-16">
+      <div className="site-container">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Testimonials</span>
           <h2 className="font-display text-3xl md:text-5xl font-bold mt-2">
@@ -260,7 +260,7 @@ function Testimonials() {
 function Consultation() {
   return (
     <section id="consultation" className="py-20 md:py-28 bg-background">
-      <div className="container mx-auto px-6 md:px-10 lg:px-16 grid lg:grid-cols-2 gap-12 items-center">
+      <div className="site-container grid lg:grid-cols-2 gap-12 items-center">
         <div>
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Free Consultation</span>
           <h2 className="font-display text-3xl md:text-5xl font-bold mt-2 leading-tight">
@@ -286,7 +286,7 @@ function Consultation() {
 function CTABanner() {
   return (
     <section className="py-16 bg-gradient-primary text-primary-foreground text-center">
-      <div className="container mx-auto px-6 md:px-10 lg:px-16">
+      <div className="site-container">
         <h2 className="font-display text-3xl md:text-4xl font-bold mb-3">Ready to Transform Your Life?</h2>
         <p className="text-white/85 mb-6">Speak directly with our astrologer today.</p>
         <a href={SITE.phoneHref} className="inline-flex items-center gap-2 rounded-full bg-white text-primary font-bold px-7 py-3.5 shadow-elegant hover:scale-105 transition-transform">

@@ -12,7 +12,7 @@ export default function Services() {
       <PageHero title="Our Astrology Services" subtitle="Authentic, time-tested spiritual remedies for every aspect of your life." />
 
       <section className="py-20 bg-background">
-        <div className="container mx-auto px-6 md:px-10 lg:px-16 grid lg:grid-cols-[1fr_320px] gap-10">
+        <div className="site-container grid lg:grid-cols-[1fr_320px] gap-10">
           <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-6">
             {SERVICES.map((s, i) => (
               <article key={s.slug} className="group relative overflow-hidden rounded-3xl bg-card border border-border shadow-card hover:-translate-y-2 hover:shadow-elegant hover:border-primary/40 transition-all duration-500 mb-6">
