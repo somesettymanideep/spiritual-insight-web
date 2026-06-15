@@ -112,20 +112,22 @@ function About() {
             <img src={aboutImg} alt="Sri Durga Matha Astrologer" loading="lazy" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-cosmos/60 to-transparent" />
           </div>
-          <img
-            src={jupiterAsset.url}
-            alt=""
-            aria-hidden="true"
-            loading="lazy"
-            className="pointer-events-none absolute -top-6 -right-6 w-20 h-20 select-none z-20 drop-shadow-lg"
-            style={{ transform: `rotate(${scrollY * 0.4}deg)` }}
-          />
           <div className="absolute -bottom-6 -right-6 md:-right-10 glass-light rounded-2xl p-5 shadow-elegant max-w-[200px]">
             <div className="text-4xl font-display font-bold text-gradient-primary">15+</div>
             <div className="text-xs uppercase tracking-wider text-muted-foreground">Years of Spiritual Practice</div>
           </div>
         </div>
         <div className="space-y-6">
+          <div className="flex justify-end mb-[70px]">
+            <img
+              src={jupiterAsset.url}
+              alt=""
+              aria-hidden="true"
+              loading="lazy"
+              className="pointer-events-none w-20 h-20 select-none z-20 drop-shadow-lg"
+              style={{ transform: `rotate(${scrollY * 0.4}deg)` }}
+            />
+          </div>
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">About Us</span>
           <h2 className="font-display text-3xl md:text-5xl font-bold leading-tight">
             About <span className="text-gradient-primary">Sri Durga Matha</span> Astrology
