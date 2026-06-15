@@ -2,9 +2,9 @@ import ganeshAsset from "@/assets/pooja-ganesh.png.asset.json";
 import durgaAsset from "@/assets/pooja-durga.png.asset.json";
 import kaliAsset from "@/assets/pooja-kali.png.asset.json";
 import fourCornerAsset from "@/assets/pooja-four-corner.png.asset.json";
-import shivaImage from "@/assets/pooja-shiva.jpg";
+import shivaAsset from "@/assets/pooja-shiva.png.asset.json";
 import lakshmiAsset from "@/assets/pooja-lakshmi.png.asset.json";
-import internationalImage from "@/assets/pooja-international.jpg";
+import internationalAsset from "@/assets/pooja-international.png.asset.json";
 import hanumanAsset from "@/assets/pooja-hanuman.png.asset.json";
 import customAsset from "@/assets/pooja-custom.png.asset.json";
 
@@ -12,7 +12,9 @@ const ganeshImage = ganeshAsset.url;
 const durgaImage = durgaAsset.url;
 const kaliImage = kaliAsset.url;
 const fourCornerImage = fourCornerAsset.url;
+const shivaImage = shivaAsset.url;
 const lakshmiImage = lakshmiAsset.url;
+const internationalImage = internationalAsset.url;
 const hanumanImage = hanumanAsset.url;
 const customImage = customAsset.url;
 
