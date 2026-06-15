@@ -140,22 +140,24 @@ function Services() {
             Authentic spiritual solutions for every challenge in life — backed by ancient wisdom and decades of experience.
           </p>
         </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {SERVICES.map((s) => (
-            <article key={s.slug} className="group relative rounded-2xl bg-card shadow-card hover:-translate-y-2 hover:shadow-elegant transition-all duration-300 border border-transparent hover:border-primary/30 overflow-hidden mb-6">
+        <AutoCarousel
+          ariaLabel="services"
+          items={SERVICES.map((s) => (
+            <article key={s.slug} className="group relative rounded-2xl bg-card shadow-card hover:-translate-y-2 hover:shadow-elegant transition-all duration-300 border border-transparent hover:border-primary/30 overflow-hidden h-full flex flex-col">
               <div className="relative aspect-[4/3] overflow-hidden">
                 <img src={s.image} alt={s.title} loading="lazy" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-cosmos/80 via-cosmos/10 to-transparent" />
               </div>
-              <div className="p-6">
+              <div className="p-6 flex-1 flex flex-col">
                 <h3 className="font-display text-xl font-semibold text-foreground mb-3">{s.title}</h3>
-                <Link to={`/services/${s.slug}`} className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:gap-2.5 transition-all">
+                <Link to={`/services/${s.slug}`} className="mt-auto inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:gap-2.5 transition-all">
                   Read More <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
               </div>
             </article>
           ))}
-        </div>
+        />
+
       </div>
     </section>
   );
