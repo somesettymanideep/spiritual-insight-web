@@ -14,7 +14,7 @@ export default function About() {
       <PageHero title="About Sri Durga Matha Astrology" subtitle="A trusted name in spiritual guidance, helping thousands transform their lives through ancient wisdom." />
 
       <section className="py-20 bg-background">
-        <div className="container mx-auto px-6 md:px-10 lg:px-16 grid lg:grid-cols-2 gap-12 items-center">
+        <div className="site-container grid lg:grid-cols-2 gap-12 items-center">
           <div className="relative">
             <div className="absolute -inset-4 bg-gradient-primary opacity-20 blur-3xl" />
             <img src={asset("about-astrologer.jpg")} alt="Astrologer" loading="lazy" className="relative rounded-3xl shadow-elegant w-full aspect-[4/5] object-cover" />
@@ -33,7 +33,7 @@ export default function About() {
       </section>
 
       <section className="py-20 bg-muted">
-        <div className="container mx-auto px-6 md:px-10 lg:px-16 grid md:grid-cols-3 gap-6">
+        <div className="site-container grid md:grid-cols-3 gap-6">
           {[
             { icon: Eye, title: "Our Vision", text: "To become a trusted source of astrological guidance helping people overcome challenges and achieve happiness." },
             { icon: Target, title: "Our Mission", text: "To provide authentic astrology services and spiritual solutions with honesty and dedication." },
@@ -52,7 +52,7 @@ export default function About() {
 
       <section className="relative py-24 bg-cosmos text-cosmos-foreground overflow-hidden">
         <StarField density={50} />
-        <div className="relative container mx-auto px-6 md:px-10 lg:px-16">
+        <div className="relative site-container">
           <div className="mb-14 text-center">
             <span className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">A legacy of trust</span>
             <h2 className="mt-3 font-display text-3xl font-bold md:text-4xl">Guidance That Makes a Difference</h2>
@@ -77,7 +77,7 @@ export default function About() {
       </section>
 
       <section className="py-20 bg-background">
-        <div className="container mx-auto px-6 md:px-10 lg:px-16">
+        <div className="site-container">
           <h2 className="font-display text-3xl md:text-5xl font-bold text-center mb-12">
             What <span className="text-gradient-primary">Clients Say</span>
           </h2>
@@ -96,7 +96,7 @@ export default function About() {
       </section>
 
       <section className="py-16 bg-gradient-primary text-primary-foreground text-center">
-        <div className="container mx-auto px-6 md:px-10 lg:px-16">
+        <div className="site-container">
           <h2 className="font-display text-3xl md:text-4xl font-bold mb-3">Ready to Transform Your Life?</h2>
           <p className="text-white/85 mb-6">Speak directly with our astrologer today.</p>
           <a href={SITE.phoneHref} className="inline-flex items-center gap-2 rounded-full bg-white text-primary font-bold px-7 py-3.5 shadow-elegant hover:scale-105 transition-transform">

@@ -29,7 +29,7 @@ export function Header() {
         scrolled ? "shadow-card py-2" : "shadow-sm py-3"
       }`}
     >
-      <div className="container mx-auto px-4 flex items-center justify-between gap-4">
+      <div className="site-container flex items-center justify-between gap-4">
         <Link to="/" className="flex items-center gap-2 shrink-0">
           <img src={asset("logo.png")} alt={SITE.name} className="h-12 md:h-14 w-auto" />
         </Link>

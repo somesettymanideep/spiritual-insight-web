@@ -27,7 +27,7 @@ export function PageHero({ title, subtitle, image }: { title: string; subtitle?:
       />
       <div className="absolute inset-0 bg-gradient-to-b from-cosmos/80 via-cosmos/60 to-cosmos/85" />
       <StarField density={40} />
-      <div className="relative container mx-auto px-6 md:px-10 lg:px-16 text-center">
+      <div className="relative site-container text-center">
         <h1 className="font-display text-4xl md:text-6xl font-bold mb-4 animate-fade-up">
           <span className="text-gradient-gold">{title}</span>
         </h1>

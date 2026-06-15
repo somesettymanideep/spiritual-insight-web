@@ -17,7 +17,7 @@ export default function ServiceDetail() {
     return (
       <SiteLayout>
         <PageHero title="Service Not Found" subtitle="The service you're looking for doesn't exist." />
-        <section className="py-20 container mx-auto px-6 md:px-10 lg:px-16 text-center">
+        <section className="py-20 site-container text-center">
           <Link to="/services" className="inline-flex items-center gap-2 text-primary font-semibold">
             <ArrowLeft className="h-4 w-4" /> Back to all services
           </Link>
@@ -30,7 +30,7 @@ export default function ServiceDetail() {
     <SiteLayout>
       <PageHero title={service.title} subtitle={service.desc} image={service.image} />
       <section className="py-20 bg-background">
-        <div className="container mx-auto px-6 md:px-10 lg:px-16 grid lg:grid-cols-[1fr_320px] gap-10 items-start">
+        <div className="site-container grid lg:grid-cols-[1fr_320px] gap-10 items-start">
           <article>
             <div className="rounded-3xl overflow-hidden shadow-elegant mb-8 aspect-[16/9]">
               <img src={service.image} alt={service.title} className="w-full h-full object-cover" />
