@@ -1,12 +1,20 @@
-import ganeshImage from "@/assets/pooja-ganesh.jpg";
-import durgaImage from "@/assets/pooja-durga.jpg";
-import kaliImage from "@/assets/pooja-kali.jpg";
-import fourCornerImage from "@/assets/pooja-four-corner.jpg";
+import ganeshAsset from "@/assets/pooja-ganesh.png.asset.json";
+import durgaAsset from "@/assets/pooja-durga.png.asset.json";
+import kaliAsset from "@/assets/pooja-kali.png.asset.json";
+import fourCornerAsset from "@/assets/pooja-four-corner.png.asset.json";
 import shivaImage from "@/assets/pooja-shiva.jpg";
-import lakshmiImage from "@/assets/pooja-lakshmi.jpg";
+import lakshmiAsset from "@/assets/pooja-lakshmi.png.asset.json";
 import internationalImage from "@/assets/pooja-international.jpg";
-import hanumanImage from "@/assets/pooja-hanuman.jpg";
-import customImage from "@/assets/pooja-custom.jpg";
+import hanumanAsset from "@/assets/pooja-hanuman.png.asset.json";
+import customAsset from "@/assets/pooja-custom.png.asset.json";
+
+const ganeshImage = ganeshAsset.url;
+const durgaImage = durgaAsset.url;
+const kaliImage = kaliAsset.url;
+const fourCornerImage = fourCornerAsset.url;
+const lakshmiImage = lakshmiAsset.url;
+const hanumanImage = hanumanAsset.url;
+const customImage = customAsset.url;
 
 export const POOJA_SERVICES = [
   {
