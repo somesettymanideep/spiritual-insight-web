@@ -12,7 +12,7 @@ export default function PoojaServiceDetailPage() {
     return (
       <SiteLayout>
         <PageHero title="Pooja Service Not Found" subtitle="The service you requested is unavailable." />
-        <section className="py-20 text-center">
+        <section className="py-20 container mx-auto px-6 md:px-8 lg:px-10 text-center">
           <Link to="/pooja-prayer" className="inline-flex items-center gap-2 font-semibold text-primary">
             <ArrowLeft className="h-4 w-4" /> Back to all Pooja services
           </Link>
@@ -25,7 +25,7 @@ export default function PoojaServiceDetailPage() {
     <SiteLayout>
       <PageHero title={service.title} subtitle={service.desc} image={service.image} />
       <main className="bg-background py-20">
-        <div className="container mx-auto grid max-w-6xl items-start gap-12 px-6 md:px-10 lg:grid-cols-2 lg:px-16">
+        <div className="container mx-auto grid max-w-6xl items-start gap-12 px-6 md:px-8 lg:grid-cols-2 lg:px-10">
           <div className="overflow-hidden rounded-3xl shadow-elegant">
             <img src={service.image} alt={`${service.title} ceremony`} className="aspect-[4/3] h-full w-full object-cover" />
           </div>

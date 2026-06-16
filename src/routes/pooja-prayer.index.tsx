@@ -14,7 +14,7 @@ export default function PoojaPrayerPage() {
       />
 
       <section className="py-20 bg-background">
-        <div className="container mx-auto px-4 md:px-6 lg:px-8">
+        <div className="container mx-auto px-6 md:px-8 lg:px-10">
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
               Sacred Services We <span className="text-gradient-primary">Offer</span>
@@ -62,7 +62,7 @@ export default function PoojaPrayerPage() {
       </section>
 
       <section className="py-20 bg-gradient-cosmos text-cosmos-foreground relative overflow-hidden">
-        <div className="container mx-auto px-4 md:px-6 lg:px-8">
+        <div className="container mx-auto px-6 md:px-8 lg:px-10">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
               <span className="text-gradient-gold">Book Your Pooja Today</span>
