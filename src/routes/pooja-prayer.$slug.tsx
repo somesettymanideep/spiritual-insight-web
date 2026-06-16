@@ -1,62 +1,25 @@
-import { createFileRoute, Link, notFound, useRouter } from "@tanstack/react-router";
+import { Link, useParams } from "react-router-dom";
 import { ArrowLeft, Check, MessageCircle, Phone } from "lucide-react";
 import { SiteLayout, PageHero } from "@/components/SiteLayout";
-import { Button } from "@/components/ui/button";
 import { POOJA_SERVICES } from "@/lib/pooja-services";
 import { SITE } from "@/lib/site";
 
-export const Route = createFileRoute("/pooja-prayer/$slug")({
-  head: ({ params }) => {
-    const service = POOJA_SERVICES.find((item) => item.slug === params.slug);
-    const title = service ? `${service.title} — Pooja & Prayer` : "Pooja Service";
-    const description = service?.desc ?? "Authentic Hindu pooja and prayer service.";
-    return {
-      meta: [
-        { title },
-        { name: "description", content: description },
-        { property: "og:title", content: title },
-        { property: "og:description", content: description },
-        ...(service ? [{ property: "og:image", content: service.image }] : []),
-      ],
-    };
-  },
-  loader: ({ params }) => {
-    const service = POOJA_SERVICES.find((item) => item.slug === params.slug);
-    if (!service) throw notFound();
-    return { service };
-  },
-  notFoundComponent: PoojaNotFound,
-  errorComponent: PoojaError,
-  component: PoojaServiceDetailPage,
-});
+export default function PoojaServiceDetailPage() {
+  const { slug } = useParams<{ slug: string }>();
+  const service = POOJA_SERVICES.find((item) => item.slug === slug);
 
-function PoojaNotFound() {
-  return (
-    <SiteLayout>
-      <PageHero title="Pooja Service Not Found" subtitle="The service you requested is unavailable." />
-      <section className="py-20 text-center">
-        <Link to="/pooja-prayer" className="inline-flex items-center gap-2 font-semibold text-primary">
-          <ArrowLeft className="h-4 w-4" /> Back to all Pooja services
-        </Link>
-      </section>
-    </SiteLayout>
-  );
-}
-
-function PoojaError({ reset }: { reset: () => void }) {
-  const router = useRouter();
-  return (
-    <SiteLayout>
-      <PageHero title="Something Went Wrong" subtitle="We could not load this Pooja service." />
-      <section className="py-20 text-center">
-        <Button onClick={() => { void router.invalidate(); reset(); }}>Try Again</Button>
-      </section>
-    </SiteLayout>
-  );
-}
-
-function PoojaServiceDetailPage() {
-  const { service } = Route.useLoaderData();
+  if (!service) {
+    return (
+      <SiteLayout>
+        <PageHero title="Pooja Service Not Found" subtitle="The service you requested is unavailable." />
+        <section className="py-20 text-center">
+          <Link to="/pooja-prayer" className="inline-flex items-center gap-2 font-semibold text-primary">
+            <ArrowLeft className="h-4 w-4" /> Back to all Pooja services
+          </Link>
+        </section>
+      </SiteLayout>
+    );
+  }
 
   return (
     <SiteLayout>

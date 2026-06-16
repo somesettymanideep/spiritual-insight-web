@@ -1,23 +1,11 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { BadgeCheck, Check, Clock3, Eye, Headphones, Heart, Star, Target, Users } from "lucide-react";
 import { SiteLayout, PageHero } from "@/components/SiteLayout";
 import { StarField } from "@/components/StarField";
 import { TESTIMONIALS, SITE } from "@/lib/site";
 import aboutImg from "@/assets/main-astrologer.webp.asset.json";
 
-export const Route = createFileRoute("/about")({
-  head: () => ({
-    meta: [
-      { title: "About Us — Sri Durga Matha Astrology" },
-      { name: "description", content: "Learn about Sri Durga Matha Astrology — 15+ years of experience offering trusted astrology and spiritual solutions." },
-      { property: "og:title", content: "About Sri Durga Matha Astrology" },
-      { property: "og:description", content: "Trusted astrology and spiritual guidance with 15+ years of experience." },
-    ],
-  }),
-  component: AboutPage,
-});
-
-function AboutPage() {
+export default function AboutPage() {
   return (
     <SiteLayout>
       <PageHero title="About Sri Durga Matha Astrology" subtitle="A trusted name in spiritual guidance, helping thousands transform their lives through ancient wisdom." />
