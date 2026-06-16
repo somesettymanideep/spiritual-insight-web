@@ -25,7 +25,7 @@ export default function ServiceDetailPage() {
       <PageHero title={service.title} subtitle={service.desc} image={service.image as string} />
 
       <section className="py-20 bg-background">
-        <div className="container mx-auto grid max-w-6xl items-start gap-10 lg:grid-cols-2 lg:px-10">
+        <div className="container mx-auto grid lg:grid-cols-[1fr_320px] gap-10 items-start">
           <article>
             <div className="rounded-3xl overflow-hidden shadow-elegant mb-8 aspect-[16/9]">
               <img src={service.image} alt={service.title} className="w-full h-full object-cover" />
