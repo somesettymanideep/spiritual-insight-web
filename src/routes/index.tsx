@@ -338,7 +338,7 @@ function CTABanner() {
       />
       <div className="absolute inset-0 bg-primary/70" />
       <StarField density={40} />
-      <div className="relative container mx-auto px-6 md:px-8 lg:px-10 text-center max-w-3xl">
+      <div className="relative container mx-auto text-center max-w-3xl">
         <h2 className="font-display text-3xl md:text-5xl font-bold mb-4">Need Immediate Astrology Guidance?</h2>
         <p className="text-white/85 text-lg mb-8">Talk directly with our astrology expert today.</p>
         <div className="flex flex-wrap justify-center gap-4">
