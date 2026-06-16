@@ -45,7 +45,8 @@ export function Footer() {
         </div>
       </div>
       <div className="relative border-t border-white/10 py-5 text-center text-sm text-white/60">
-        © 2026 {SITE.name}. All Rights Reserved.
+        <div>© 2026 {SITE.name}. All Rights Reserved.</div>
+        <div className="mt-1">Designed and developed by <a href="https://www.ayrondigitalsolutions.com" target="_blank" rel="noopener noreferrer" className="font-bold text-white hover:text-gold underline underline-offset-2">Ayrondigitalsolutions</a></div>
       </div>
     </footer>
   );
