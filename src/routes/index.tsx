@@ -5,7 +5,7 @@ import { SiteLayout } from "@/components/SiteLayout";
 import { StarField } from "@/components/StarField";
 import { ConsultationForm } from "@/components/ConsultationForm";
 import { SITE, SERVICES, TESTIMONIALS } from "@/lib/site";
-import aboutImg from "@/assets/about-astrologer.jpg";
+import aboutImg from "@/assets/main-astrologer.webp.asset.json";
 import jupiterAsset from "@/assets/jupiter.webp.asset.json";
 import ctaVideoAsset from "@/assets/cta-video.mp4.asset.json";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
@@ -110,7 +110,7 @@ function About() {
         <div className="relative">
           <div className="absolute -inset-4 bg-gradient-primary opacity-20 blur-3xl rounded-full" />
           <div className="relative rounded-3xl overflow-hidden shadow-elegant aspect-[4/5]">
-            <img src={aboutImg} alt="Sri Durga Matha Astrologer" loading="lazy" className="w-full h-full object-cover" />
+            <img src={aboutImg.url} alt="Sri Durga Matha Astrologer" loading="lazy" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-cosmos/60 to-transparent" />
           </div>
           <div className="absolute -bottom-6 -right-6 md:-right-10 glass-light rounded-2xl p-5 shadow-elegant max-w-[200px]">
