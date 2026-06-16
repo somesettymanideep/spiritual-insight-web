@@ -5,7 +5,7 @@ import path from "node:path";
 
 // GitHub Pages base path. Repo name: spiritual-insight-web
 export default defineConfig({
-  base: "/spiritual-insight-web/",
+  base: "/",
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: { "@": path.resolve(__dirname, "src") },
