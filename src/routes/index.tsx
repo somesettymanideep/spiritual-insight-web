@@ -57,9 +57,10 @@ function Hero() {
           <span className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs font-medium tracking-wider uppercase text-gold">
             <Sparkles className="h-3.5 w-3.5" /> Trusted Spiritual Guidance
           </span>
-          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.05]">
+          <h1 className="font-display text-[5.5vw] sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.05]">
             <span className="text-gradient-gold">SRI DURGA MATHA</span>
-            <br />
+            <span className="sm:hidden"> </span>
+            <br className="hidden sm:block" />
             <span className="text-white">ASTROLOGY</span>
           </h1>
           <p className="text-lg md:text-xl text-white/90 font-medium">
@@ -69,12 +70,12 @@ function Hero() {
             Get accurate predictions and effective spiritual remedies from experienced astrology specialists.
             Helping people overcome life's challenges through ancient astrological wisdom.
           </p>
-          <div className="flex flex-wrap gap-3 pt-2">
-            <a href="#consultation" className="inline-flex items-center gap-2 rounded-full bg-gradient-primary text-primary-foreground font-semibold px-6 py-3.5 shadow-elegant hover:scale-105 transition-transform">
-              <Calendar className="h-5 w-5" /> Book Consultation
+          <div className="flex flex-nowrap gap-2 sm:gap-3 pt-2">
+            <a href="#consultation" className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full bg-gradient-primary text-primary-foreground font-semibold px-3 py-2.5 sm:px-6 sm:py-3.5 text-sm sm:text-base shadow-elegant hover:scale-105 transition-transform">
+              <Calendar className="h-4 w-4 sm:h-5 sm:w-5" /> Book Consultation
             </a>
-            <a href={SITE.phoneHref} className="inline-flex items-center gap-2 rounded-full glass text-white font-semibold px-6 py-3.5 hover:bg-white/20 transition-colors">
-              <Phone className="h-5 w-5" /> Call Now
+            <a href={SITE.phoneHref} className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full glass text-white font-semibold px-3 py-2.5 sm:px-6 sm:py-3.5 text-sm sm:text-base hover:bg-white/20 transition-colors">
+              <Phone className="h-4 w-4 sm:h-5 sm:w-5" /> Call Now
             </a>
           </div>
           <div className="flex items-center gap-3 pt-4">
