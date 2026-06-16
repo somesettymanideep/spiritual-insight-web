@@ -89,7 +89,7 @@ function Hero() {
           </div>
         </div>
       </div>
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/60 text-xs flex flex-col items-center gap-1 animate-float">
+      <div className="hidden sm:flex absolute bottom-6 left-1/2 -translate-x-1/2 text-white/60 text-xs flex-col items-center gap-1 animate-float">
         <span>Scroll</span>
         <div className="h-8 w-px bg-white/40" />
       </div>
