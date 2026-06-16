@@ -78,7 +78,7 @@ function Hero() {
               <Phone className="h-4 w-4 sm:h-5 sm:w-5" /> Call Now
             </a>
           </div>
-          <div className="hidden sm:flex items-center gap-3 pt-4">
+          <div className="hidden sm:flex items-center gap-3">
             <div className="h-12 w-12 rounded-full bg-gradient-gold flex items-center justify-center animate-glow-pulse">
               <Phone className="h-5 w-5 text-gold-foreground" />
             </div>
