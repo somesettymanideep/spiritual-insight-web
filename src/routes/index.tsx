@@ -5,7 +5,7 @@ import { SiteLayout } from "@/components/SiteLayout";
 import { StarField } from "@/components/StarField";
 import { ConsultationForm } from "@/components/ConsultationForm";
 import { SITE, SERVICES, TESTIMONIALS } from "@/lib/site";
-import aboutImg from "@/assets/about-astrologer.jpg";
+import aboutImg from "@/assets/main-astrologer.webp.asset.json";
 import jupiterAsset from "@/assets/jupiter.webp.asset.json";
 import ctaVideoAsset from "@/assets/cta-video.mp4.asset.json";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
