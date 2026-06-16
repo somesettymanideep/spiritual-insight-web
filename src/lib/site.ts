@@ -48,11 +48,11 @@ export const SERVICES = [
 ];
 
 export const TESTIMONIALS = [
-  { name: "Mouli", role: "Hyderabad", rating: 5, text: "Guruji's predictions were spot on. My marriage issues are now resolved and our home is peaceful again. Forever grateful." },
-  { name: "Ajay", role: "Vijayawada", rating: 5, text: "I got my love back within weeks of following the remedies. The most genuine astrologer I have consulted in years." },
-  { name: "Keerthana", role: "Eluru", rating: 5, text: "Guruji removed the negative energy affecting my career. I received a major promotion in just two months." },
-  { name: "Lakshmi", role: "Visakhapatnam", rating: 5, text: "Black magic removal session was life-changing. My family is healthy and happy again. Highly recommended." },
-  { name: "Aswini", role: "Guntur", rating: 5, text: "Accurate palm reading and trustworthy guidance. Sri Durga Matha Astrology truly cares about every client." },
-  { name: "Krishna", role: "Rajahmundry", rating: 5, text: "After years of financial struggle, Guruji's remedies brought stability and prosperity to my business. Truly blessed." },
-  { name: "Prasanna", role: "Kakinada", rating: 5, text: "The love marriage specialist service helped unite me with my partner despite family opposition. Thank you so much Guruji." },
+  { name: "Mouli", role: "Hyderabad", rating: 5, text: "Guruji cheppina vishayalu anni nijam aiyyayi. Naa pelli samasyalu anni theeripoyayi, maa intlo sandadhi ga undi. Jeevithanthu kruthagnathalu." },
+  { name: "Ajay", role: "Vijayawada", rating: 5, text: "Nenu naa premani thirigi pondanu. Guruji ichina pariharam tho weeks lo ne solve ayyindi. Intha genuine astrologer ni naa jeevitham lo chudale." },
+  { name: "Keerthana", role: "Eluru", rating: 5, text: "Guruji naa career meeda unnati drushti ni theesaru. Rendu nelallo ne naaku pedda promotion vachindi. Chala thanks Guruji." },
+  { name: "Lakshmi", role: "Visakhapatnam", rating: 5, text: "Black magic removal session naa jeevitham marchindi. Maa kutumbam andaru aarogyanga santhosanga unnaru. Chala recommend chesthanu." },
+  { name: "Aswini", role: "Guntur", rating: 5, text: "Chala accurate ga chethulu chusaru, nammakamaina margadarsanam icharu. Sri Durga Matha Astrology prathi client ki chala jagrathaga chustundi." },
+  { name: "Krishna", role: "Rajahmundry", rating: 5, text: "Samvatsarala dharidram tharuvatha, Guruji ichina pariharam tho naa vyaparam lo sthiratha raavadam tho patu samruddhi kuda vachindi. Jeevithaniki varam." },
+  { name: "Prasanna", role: "Kakinada", rating: 5, text: "Love marriage specialist service naa partner ni naatho kalupukundani kutumbha virudhambanuku sariyaina maargam ichindi. Chala thanks Guruji." },
 ];
