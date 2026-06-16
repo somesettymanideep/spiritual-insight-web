@@ -29,7 +29,7 @@ export default function HomePage() {
 
 function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden bg-cosmos text-cosmos-foreground">
+    <section className="relative -mx-6 md:-mx-8 lg:-mx-10 min-h-screen flex items-center pt-24 pb-12 overflow-hidden bg-cosmos text-cosmos-foreground">
       <video
         src={HERO_VIDEO}
         autoPlay
@@ -94,7 +94,7 @@ function About() {
   }, []);
   return (
     <section className="py-20 md:py-28 bg-background relative overflow-hidden">
-      <div className="relative z-10 container mx-auto px-6 md:px-8 lg:px-10 grid lg:grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 container mx-auto grid lg:grid-cols-2 gap-12 items-center">
         <div className="relative">
           <div className="absolute -inset-4 bg-gradient-primary opacity-20 blur-3xl rounded-full" />
           <div className="relative rounded-3xl overflow-hidden shadow-elegant aspect-[4/5]">
@@ -150,7 +150,7 @@ function Services() {
   return (
     <section className="py-20 md:py-28 bg-muted relative overflow-hidden">
       <div className="absolute inset-0 opacity-30" style={{ background: "var(--gradient-radial)" }} />
-      <div className="relative container mx-auto px-6 md:px-8 lg:px-10">
+      <div className="relative container mx-auto">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">What We Offer</span>
           <h2 className="font-display text-3xl md:text-5xl font-bold mt-2">
@@ -211,7 +211,7 @@ function WhyChoose() {
   ];
   return (
     <section className="py-20 md:py-28 bg-background">
-      <div className="container mx-auto px-6 md:px-8 lg:px-10">
+      <div className="container mx-auto">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Why Choose Us</span>
           <h2 className="font-display text-3xl md:text-5xl font-bold mt-2">
@@ -242,10 +242,10 @@ function Stats() {
     { num: "24/7", label: "Support Available" },
   ];
   return (
-    <section className="relative py-20 bg-cosmos text-cosmos-foreground overflow-hidden">
+    <section className="relative -mx-6 md:-mx-8 lg:-mx-10 py-20 bg-cosmos text-cosmos-foreground overflow-hidden">
       <StarField density={50} />
       <div className="absolute inset-0 opacity-40" style={{ background: "var(--gradient-radial)" }} />
-      <div className="relative container mx-auto px-6 md:px-8 lg:px-10 grid grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="relative container mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8">
         {stats.map((s) => (
           <div key={s.label} className="text-center">
             <div className="font-display text-5xl md:text-6xl font-bold text-gradient-gold">{s.num}</div>
@@ -260,7 +260,7 @@ function Stats() {
 function Testimonials() {
   return (
     <section className="py-20 md:py-28 bg-muted">
-      <div className="container mx-auto px-6 md:px-8 lg:px-10">
+      <div className="container mx-auto">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Testimonials</span>
           <h2 className="font-display text-3xl md:text-5xl font-bold mt-2">
@@ -302,7 +302,7 @@ function Testimonials() {
 function Consultation() {
   return (
     <section id="consultation" className="py-20 md:py-28 bg-background">
-      <div className="container mx-auto px-6 md:px-8 lg:px-10 grid lg:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto grid lg:grid-cols-2 gap-12 items-center">
         <div>
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Free Consultation</span>
           <h2 className="font-display text-3xl md:text-5xl font-bold mt-2 leading-tight">
@@ -326,7 +326,7 @@ function Consultation() {
 
 function CTABanner() {
   return (
-    <section className="relative py-20 bg-primary text-primary-foreground overflow-hidden">
+    <section className="relative -mx-6 md:-mx-8 lg:-mx-10 py-20 bg-primary text-primary-foreground overflow-hidden">
       <video
         src={ctaVideoAsset.url}
         autoPlay
@@ -338,7 +338,7 @@ function CTABanner() {
       />
       <div className="absolute inset-0 bg-primary/70" />
       <StarField density={40} />
-      <div className="relative container mx-auto px-6 md:px-8 lg:px-10 text-center max-w-3xl">
+      <div className="relative container mx-auto text-center max-w-3xl">
         <h2 className="font-display text-3xl md:text-5xl font-bold mb-4">Need Immediate Astrology Guidance?</h2>
         <p className="text-white/85 text-lg mb-8">Talk directly with our astrology expert today.</p>
         <div className="flex flex-wrap justify-center gap-4">

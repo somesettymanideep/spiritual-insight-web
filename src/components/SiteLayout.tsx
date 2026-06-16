@@ -9,7 +9,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Header />
-      <main className="flex-1">{children}</main>
+      <main className="flex-1 px-6 md:px-8 lg:px-10">{children}</main>
       <Footer />
       <FloatingActions />
     </div>
@@ -18,7 +18,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
 
 export function PageHero({ title, subtitle, image }: { title: string; subtitle?: string; image?: string }) {
   return (
-    <section className="relative pt-32 pb-20 bg-cosmos text-cosmos-foreground overflow-hidden">
+    <section className="relative -mx-6 md:-mx-8 lg:-mx-10 pt-32 pb-20 bg-cosmos text-cosmos-foreground overflow-hidden">
       <img
         src={image ?? defaultBanner}
         alt=""
