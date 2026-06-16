@@ -57,7 +57,7 @@ function Hero() {
           <span className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs font-medium tracking-wider uppercase text-gold">
             <Sparkles className="h-3.5 w-3.5" /> Trusted Spiritual Guidance
           </span>
-          <h1 className="font-display text-[5.5vw] sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.05]">
+          <h1 className="font-display text-[4.2vw] sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.05] whitespace-nowrap">
             <span className="text-gradient-gold">SRI DURGA MATHA</span>
             <span className="sm:hidden"> </span>
             <br className="hidden sm:block" />
