@@ -29,7 +29,7 @@ export default function HomePage() {
 
 function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden bg-cosmos text-cosmos-foreground">
+    <section className="relative -mx-6 md:-mx-8 lg:-mx-10 min-h-screen flex items-center pt-24 pb-12 overflow-hidden bg-cosmos text-cosmos-foreground">
       <video
         src={HERO_VIDEO}
         autoPlay
