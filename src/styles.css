@@ -153,3 +153,9 @@
 @utility animate-fade-up { animation: fade-up 0.8s ease-out both; }
 @utility animate-glow-pulse { animation: glow-pulse 3s ease-in-out infinite; }
 @utility animate-spin-slow { animation: spin-slow 60s linear infinite; }
+
+@media (min-width: 320px) and (max-width: 576px) {
+  .min-h-screen {
+    min-height:auto!important;
+  }
+}
