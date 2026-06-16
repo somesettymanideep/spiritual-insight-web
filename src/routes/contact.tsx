@@ -9,7 +9,7 @@ export default function ContactPage() {
       <PageHero title="Contact Us" subtitle="We're here to help. Reach out for confidential astrology guidance anytime." />
 
       <section className="py-20 bg-background">
-        <div className="container mx-auto px-6 md:px-10 lg:px-16 grid lg:grid-cols-3 gap-6 mb-16">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8 grid lg:grid-cols-3 gap-6 mb-16">
           {[
             { icon: MapPin, title: "Visit Us", value: SITE.address },
             { icon: Phone, title: "Call Us", value: SITE.phone, href: SITE.phoneHref },
@@ -29,7 +29,7 @@ export default function ContactPage() {
           ))}
         </div>
 
-        <div className="container mx-auto px-6 md:px-10 lg:px-16 grid lg:grid-cols-2 gap-10 items-start">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-start">
           <div>
             <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Send a Message</span>
             <h2 className="font-display text-3xl md:text-4xl font-bold mt-2 mb-4">
@@ -47,7 +47,7 @@ export default function ContactPage() {
       </section>
 
       <section className="pb-20">
-        <div className="container mx-auto px-6 md:px-10 lg:px-16">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="rounded-3xl overflow-hidden shadow-elegant border border-border h-[500px]">
             <iframe
               title="Sri Durga Matha Astrology location"

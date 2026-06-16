@@ -8,7 +8,7 @@ export function Footer() {
   return (
     <footer className="relative bg-cosmos text-cosmos-foreground overflow-hidden">
       <StarField density={60} />
-      <div className="relative container mx-auto px-6 md:px-10 lg:px-16 py-16 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+      <div className="relative container mx-auto px-4 md:px-6 lg:px-8 py-16 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
         <div>
           <img src={logoAsset.url} alt={SITE.name} className="h-14 bg-white/95 rounded-lg p-1 mb-4" />
           <p className="text-sm text-white/70 leading-relaxed">
