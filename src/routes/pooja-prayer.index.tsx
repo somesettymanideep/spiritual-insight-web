@@ -1,23 +1,11 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { Phone, MessageCircle, ArrowRight } from "lucide-react";
 import { SiteLayout, PageHero } from "@/components/SiteLayout";
 import { Button } from "@/components/ui/button";
 import { POOJA_SERVICES } from "@/lib/pooja-services";
 import { SITE } from "@/lib/site";
 
-export const Route = createFileRoute("/pooja-prayer/")({
-  head: () => ({
-    meta: [
-      { title: "Pooja & Prayer Services — Sri Durga Matha Astrology" },
-      { name: "description", content: "Book authentic Hindu pooja and prayer services: Ganesh Puja, Durga Matha Puja, Kali Matha Puja, Shiva Puja, Lakshmi Puja, Hanuman Puja, Four Corner Prayer, and International Prayers." },
-      { property: "og:title", content: "Pooja & Prayer Services" },
-      { property: "og:description", content: "Authentic Hindu pooja and prayer services performed by experienced priests." },
-    ],
-  }),
-  component: PoojaPrayerPage,
-});
-
-function PoojaPrayerPage() {
+export default function PoojaPrayerPage() {
   return (
     <SiteLayout>
       <PageHero
@@ -37,40 +25,38 @@ function PoojaPrayerPage() {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {POOJA_SERVICES.map((service, i) => {
-              return (
-                <article
-                  key={service.title}
-                  className="group relative overflow-hidden rounded-3xl bg-card border border-border shadow-card hover:-translate-y-2 hover:shadow-elegant hover:border-primary/40 transition-all duration-500"
-                >
-                  <div className="aspect-[4/3] overflow-hidden">
-                    <img
-                      src={service.image}
-                      alt={`${service.title} prayer service`}
-                      loading="lazy"
-                      width={768}
-                      height={960}
-                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
+            {POOJA_SERVICES.map((service, i) => (
+              <article
+                key={service.title}
+                className="group relative overflow-hidden rounded-3xl bg-card border border-border shadow-card hover:-translate-y-2 hover:shadow-elegant hover:border-primary/40 transition-all duration-500"
+              >
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img
+                    src={service.image}
+                    alt={`${service.title} prayer service`}
+                    loading="lazy"
+                    width={768}
+                    height={960}
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-8">
+                  <div className="flex items-center gap-4 mb-4">
+                    <span className="text-xs font-bold uppercase tracking-[0.2em] text-primary">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
                   </div>
-                  <div className="p-8">
-                    <div className="flex items-center gap-4 mb-4">
-                      <span className="text-xs font-bold uppercase tracking-[0.2em] text-primary">
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
-                    </div>
-                    <h3 className="font-display text-xl font-semibold mb-5 group-hover:text-primary transition-colors">
-                      {service.title}
-                    </h3>
-                    <Button asChild className="rounded-full">
-                      <Link to="/pooja-prayer/$slug" params={{ slug: service.slug }}>
-                        Read More <ArrowRight className="h-4 w-4" />
-                      </Link>
-                    </Button>
-                  </div>
-                </article>
-              );
-            })}
+                  <h3 className="font-display text-xl font-semibold mb-5 group-hover:text-primary transition-colors">
+                    {service.title}
+                  </h3>
+                  <Button asChild className="rounded-full">
+                    <Link to={`/pooja-prayer/${service.slug}`}>
+                      Read More <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  </Button>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -85,18 +71,10 @@ function PoojaPrayerPage() {
               Contact us to schedule your sacred ceremony. We perform poojas both in-person and remotely for devotees across the world.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a
-                href={SITE.phoneHref}
-                className="inline-flex items-center gap-2 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur px-6 py-3 font-semibold transition-colors"
-              >
+              <a href={SITE.phoneHref} className="inline-flex items-center gap-2 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur px-6 py-3 font-semibold transition-colors">
                 <Phone className="h-5 w-5 text-gold" /> {SITE.phone}
               </a>
-              <a
-                href={SITE.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-[#25D366] text-white px-6 py-3 font-semibold hover:scale-105 transition-transform"
-              >
+              <a href={SITE.whatsapp} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-[#25D366] text-white px-6 py-3 font-semibold hover:scale-105 transition-transform">
                 <MessageCircle className="h-5 w-5" /> WhatsApp Us
               </a>
             </div>

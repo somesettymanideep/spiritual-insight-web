@@ -1,22 +1,9 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { MapPin, Mail, Phone, MessageCircle } from "lucide-react";
 import { SiteLayout, PageHero } from "@/components/SiteLayout";
 import { ConsultationForm } from "@/components/ConsultationForm";
 import { SITE } from "@/lib/site";
 
-export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: "Contact Us — Sri Durga Matha Astrology" },
-      { name: "description", content: "Contact Sri Durga Matha Astrology in Eluru, Andhra Pradesh. Call 8074668253 or send us a message." },
-      { property: "og:title", content: "Contact Sri Durga Matha Astrology" },
-      { property: "og:description", content: "Reach our astrologer in Eluru for confidential spiritual guidance." },
-    ],
-  }),
-  component: ContactPage,
-});
-
-function ContactPage() {
+export default function ContactPage() {
   return (
     <SiteLayout>
       <PageHero title="Contact Us" subtitle="We're here to help. Reach out for confidential astrology guidance anytime." />

@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import { Phone, Calendar, Check, Star, ArrowRight, Sparkles, Clock, Users } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
@@ -12,19 +12,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 
 const HERO_VIDEO = "https://res.cloudinary.com/dzj6s8hha/video/upload/v1781334801/banner-bg_i2dyhl.mp4";
 
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Sri Durga Matha Astrology — Trusted Astrologer in Eluru" },
-      { name: "description", content: "Get accurate predictions and effective spiritual remedies for love, marriage, career & black magic removal. Call 8074668253." },
-      { property: "og:title", content: "Sri Durga Matha Astrology" },
-      { property: "og:description", content: "Trusted astrology solutions for love, marriage, career & spiritual guidance." },
-    ],
-  }),
-  component: HomePage,
-});
-
-function HomePage() {
+export default function HomePage() {
   return (
     <SiteLayout>
       <Hero />
@@ -192,7 +180,7 @@ function Services() {
               </div>
               <div className="p-6">
                 <h3 className="font-display text-xl font-semibold text-foreground mb-3">{s.title}</h3>
-                <Link to="/services/$slug" params={{ slug: s.slug }} className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:gap-2.5 transition-all">
+                <Link to={`/services/${s.slug}`} className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:gap-2.5 transition-all">
                   Read More <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
               </div>

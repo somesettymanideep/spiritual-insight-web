@@ -1,54 +1,24 @@
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { Phone, MessageCircle, Check, ArrowRight, ArrowLeft } from "lucide-react";
+import { Link, useParams, Navigate } from "react-router-dom";
+import { Phone, MessageCircle, Check, ArrowLeft } from "lucide-react";
 import { SiteLayout, PageHero } from "@/components/SiteLayout";
 import { SERVICES, SITE } from "@/lib/site";
 
-export const Route = createFileRoute("/services/$slug")({
-  head: ({ params }) => {
-    const service = SERVICES.find((s) => s.slug === params.slug);
-    const title = service ? `${service.title} — Sri Durga Matha Astrology` : "Service — Sri Durga Matha Astrology";
-    const desc = service?.desc ?? "Authentic astrology service from Sri Durga Matha Astrology.";
-    return {
-      meta: [
-        { title },
-        { name: "description", content: desc },
-        { property: "og:title", content: service?.title ?? "Astrology Service" },
-        { property: "og:description", content: desc },
-        ...(service?.image ? [{ property: "og:image", content: service.image as string }] : []),
-      ],
-    };
-  },
-  loader: ({ params }) => {
-    const service = SERVICES.find((s) => s.slug === params.slug);
-    if (!service) throw notFound();
-    return { service };
-  },
-  notFoundComponent: () => (
-    <SiteLayout>
-      <PageHero title="Service Not Found" subtitle="The service you're looking for doesn't exist." />
-      <section className="py-20 container mx-auto px-6 md:px-10 lg:px-16 text-center">
-        <Link to="/services" className="inline-flex items-center gap-2 text-primary font-semibold">
-          <ArrowLeft className="h-4 w-4" /> Back to all services
-        </Link>
-      </section>
-    </SiteLayout>
-  ),
-  errorComponent: ({ error, reset }) => (
-    <SiteLayout>
-      <PageHero title="Something went wrong" subtitle={error.message} />
-      <section className="py-20 container mx-auto px-6 md:px-10 lg:px-16 text-center">
-        <button onClick={reset} className="inline-flex items-center gap-2 rounded-full bg-gradient-primary text-primary-foreground px-6 py-3 font-semibold">
-          Try again
-        </button>
-      </section>
-    </SiteLayout>
-  ),
-  component: ServiceDetailPage,
-});
+export default function ServiceDetailPage() {
+  const { slug } = useParams<{ slug: string }>();
+  const service = SERVICES.find((s) => s.slug === slug);
 
-function ServiceDetailPage() {
-  const { service } = Route.useLoaderData();
-  const related = SERVICES.filter((s) => s.slug !== service.slug).slice(0, 3);
+  if (!service) {
+    return (
+      <SiteLayout>
+        <PageHero title="Service Not Found" subtitle="The service you're looking for doesn't exist." />
+        <section className="py-20 container mx-auto px-6 md:px-10 lg:px-16 text-center">
+          <Link to="/services" className="inline-flex items-center gap-2 text-primary font-semibold">
+            <ArrowLeft className="h-4 w-4" /> Back to all services
+          </Link>
+        </section>
+      </SiteLayout>
+    );
+  }
 
   return (
     <SiteLayout>
@@ -111,8 +81,7 @@ function ServiceDetailPage() {
                   return (
                     <li key={s.slug}>
                       <Link
-                        to="/services/$slug"
-                        params={{ slug: s.slug }}
+                        to={`/services/${s.slug}`}
                         className={
                           "flex items-center gap-2 rounded-lg px-3 py-2 transition-all " +
                           (active

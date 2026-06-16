@@ -1,21 +1,9 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { Phone, MessageCircle, Check, ArrowRight } from "lucide-react";
 import { SiteLayout, PageHero } from "@/components/SiteLayout";
 import { SERVICES, SITE } from "@/lib/site";
 
-export const Route = createFileRoute("/services/")({
-  head: () => ({
-    meta: [
-      { title: "Astrology Services — Sri Durga Matha Astrology" },
-      { name: "description", content: "Explore our astrology services: black magic removal, love marriage, vashikaran, palm reading, tarot, and more. Call 8074668253." },
-      { property: "og:title", content: "Our Astrology Services" },
-      { property: "og:description", content: "Authentic spiritual solutions for love, marriage, career & protection." },
-    ],
-  }),
-  component: ServicesPage,
-});
-
-function ServicesPage() {
+export default function ServicesPage() {
   return (
     <SiteLayout>
       <PageHero title="Our Astrology Services" subtitle="Authentic, time-tested spiritual remedies for every aspect of your life." />
@@ -47,8 +35,7 @@ function ServicesPage() {
 
                   <div className="flex items-center justify-start pt-4 border-t border-border/60">
                     <Link
-                      to="/services/$slug"
-                      params={{ slug: s.slug }}
+                      to={`/services/${s.slug}`}
                       className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary group-hover:gap-2.5 transition-all"
                     >
                       Read More <ArrowRight className="h-4 w-4" />
