@@ -3,7 +3,7 @@ import { BadgeCheck, Check, Clock3, Eye, Headphones, Heart, Star, Target, Users 
 import { SiteLayout, PageHero } from "@/components/SiteLayout";
 import { StarField } from "@/components/StarField";
 import { TESTIMONIALS, SITE } from "@/lib/site";
-import aboutImg from "@/assets/about-astrologer.jpg";
+import aboutImg from "@/assets/main-astrologer.webp.asset.json";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
