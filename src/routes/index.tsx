@@ -41,7 +41,7 @@ function HomePage() {
 
 function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden bg-cosmos text-cosmos-foreground">
+    <section className="relative min-h-screen flex items-center pt-24 pb-10 sm:pb-16 overflow-hidden bg-cosmos text-cosmos-foreground">
       <video
         src={HERO_VIDEO}
         autoPlay
@@ -53,7 +53,7 @@ function Hero() {
       />
       <div className="absolute inset-0 bg-gradient-to-r from-cosmos/85 via-cosmos/60 to-transparent" />
       <div className="relative container mx-auto px-6 md:px-10 lg:px-16">
-        <div className="space-y-6 animate-fade-up max-w-2xl text-left">
+        <div className="space-y-4 sm:space-y-6 animate-fade-up max-w-2xl text-left">
           <span className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs font-medium tracking-wider uppercase text-gold">
             <Sparkles className="h-3.5 w-3.5" /> Trusted Spiritual Guidance
           </span>
@@ -78,7 +78,7 @@ function Hero() {
               <Phone className="h-4 w-4 sm:h-5 sm:w-5" /> Call Now
             </a>
           </div>
-          <div className="hidden sm:flex items-center gap-3 pt-4">
+          <div className="hidden sm:flex items-center gap-3">
             <div className="h-12 w-12 rounded-full bg-gradient-gold flex items-center justify-center animate-glow-pulse">
               <Phone className="h-5 w-5 text-gold-foreground" />
             </div>
