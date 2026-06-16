@@ -3,7 +3,7 @@ import { BadgeCheck, Check, Clock3, Eye, Headphones, Heart, Star, Target, Users 
 import { SiteLayout, PageHero } from "@/components/SiteLayout";
 import { StarField } from "@/components/StarField";
 import { TESTIMONIALS, SITE } from "@/lib/site";
-import aboutImg from "@/assets/about-astrologer.jpg";
+import aboutImg from "@/assets/main-astrologer.webp.asset.json";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -26,7 +26,7 @@ function AboutPage() {
         <div className="container mx-auto px-6 md:px-10 lg:px-16 grid lg:grid-cols-2 gap-12 items-center">
           <div className="relative">
             <div className="absolute -inset-4 bg-gradient-primary opacity-20 blur-3xl" />
-            <img src={aboutImg} alt="Astrologer" loading="lazy" className="relative rounded-3xl shadow-elegant w-full aspect-[4/5] object-cover" />
+            <img src={aboutImg.url} alt="Astrologer" loading="lazy" className="relative rounded-3xl shadow-elegant w-full aspect-[4/5] object-cover" />
           </div>
           <div className="space-y-5">
             <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Our Story</span>
