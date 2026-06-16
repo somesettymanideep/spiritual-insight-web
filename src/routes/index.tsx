@@ -326,7 +326,7 @@ function Consultation() {
 
 function CTABanner() {
   return (
-    <section className="relative py-20 bg-primary text-primary-foreground overflow-hidden">
+    <section className="relative -mx-6 md:-mx-8 lg:-mx-10 py-20 bg-primary text-primary-foreground overflow-hidden">
       <video
         src={ctaVideoAsset.url}
         autoPlay
