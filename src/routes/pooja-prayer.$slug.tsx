@@ -12,7 +12,7 @@ export default function PoojaServiceDetailPage() {
     return (
       <SiteLayout>
         <PageHero title="Pooja Service Not Found" subtitle="The service you requested is unavailable." />
-        <section className="py-20 text-center">
+        <section className="py-20 container mx-auto px-6 md:px-8 lg:px-10 text-center">
           <Link to="/pooja-prayer" className="inline-flex items-center gap-2 font-semibold text-primary">
             <ArrowLeft className="h-4 w-4" /> Back to all Pooja services
           </Link>
