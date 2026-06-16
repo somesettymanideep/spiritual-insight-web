@@ -53,7 +53,7 @@ function Hero() {
       />
       <div className="absolute inset-0 bg-gradient-to-r from-cosmos/85 via-cosmos/60 to-transparent" />
       <div className="relative container mx-auto px-6 md:px-10 lg:px-16">
-        <div className="space-y-6 animate-fade-up max-w-2xl text-left">
+        <div className="space-y-4 sm:space-y-6 animate-fade-up max-w-2xl text-left">
           <span className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs font-medium tracking-wider uppercase text-gold">
             <Sparkles className="h-3.5 w-3.5" /> Trusted Spiritual Guidance
           </span>
