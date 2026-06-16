@@ -48,9 +48,11 @@ export const SERVICES = [
 ];
 
 export const TESTIMONIALS = [
-  { name: "Priya Sharma", role: "Hyderabad", rating: 5, text: "Guruji's predictions were spot on. My marriage issues are now resolved and our home is peaceful again. Forever grateful." },
-  { name: "Rajesh Kumar", role: "Vijayawada", rating: 5, text: "I got my love back within weeks of following the remedies. The most genuine astrologer I have consulted in years." },
-  { name: "Anjali Reddy", role: "Eluru", rating: 5, text: "Guruji removed the negative energy affecting my career. I received a major promotion in just two months." },
-  { name: "Suresh Babu", role: "Visakhapatnam", rating: 5, text: "Black magic removal session was life-changing. My family is healthy and happy again. Highly recommended." },
-  { name: "Lakshmi Devi", role: "Guntur", rating: 5, text: "Accurate palm reading and trustworthy guidance. Sri Durga Matha Astrology truly cares about every client." },
+  { name: "Mouli", role: "Hyderabad", rating: 5, text: "Guruji's predictions were spot on. My marriage issues are now resolved and our home is peaceful again. Forever grateful." },
+  { name: "Ajay", role: "Vijayawada", rating: 5, text: "I got my love back within weeks of following the remedies. The most genuine astrologer I have consulted in years." },
+  { name: "Keerthana", role: "Eluru", rating: 5, text: "Guruji removed the negative energy affecting my career. I received a major promotion in just two months." },
+  { name: "Lakshmi", role: "Visakhapatnam", rating: 5, text: "Black magic removal session was life-changing. My family is healthy and happy again. Highly recommended." },
+  { name: "Aswini", role: "Guntur", rating: 5, text: "Accurate palm reading and trustworthy guidance. Sri Durga Matha Astrology truly cares about every client." },
+  { name: "Krishna", role: "Rajahmundry", rating: 5, text: "After years of financial struggle, Guruji's remedies brought stability and prosperity to my business. Truly blessed." },
+  { name: "Prasanna", role: "Kakinada", rating: 5, text: "The love marriage specialist service helped unite me with my partner despite family opposition. Thank you so much Guruji." },
 ];
