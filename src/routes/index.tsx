@@ -41,7 +41,7 @@ function HomePage() {
 
 function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden bg-cosmos text-cosmos-foreground">
+    <section className="relative min-h-screen flex items-center pt-24 pb-10 sm:pb-16 overflow-hidden bg-cosmos text-cosmos-foreground">
       <video
         src={HERO_VIDEO}
         autoPlay
