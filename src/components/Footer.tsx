@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { MapPin, Mail, Phone } from "lucide-react";
 import logoAsset from "@/assets/logo.png.asset.json";
 import { SITE, SERVICES } from "@/lib/site";
