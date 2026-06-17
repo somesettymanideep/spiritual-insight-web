@@ -4,9 +4,9 @@ import emailjs from "@emailjs/browser";
 import { SERVICES } from "@/lib/site";
 import { toast } from "sonner";
 
-const SERVICE_ID = "service_c1b7ytg";
-const TEMPLATE_ID = "template_27xu1lb";
-const PUBLIC_KEY = "EyJkkbQ_tZxgcGoSf";
+const SERVICE_ID = "service_u2p53ci";
+const TEMPLATE_ID = "template_hrhl9mk";
+const PUBLIC_KEY = "LomrHrsHF6Wsyv35E";
 
 export function ConsultationForm({ compact = false }: { compact?: boolean }) {
   const formRef = useRef<HTMLFormElement>(null);
