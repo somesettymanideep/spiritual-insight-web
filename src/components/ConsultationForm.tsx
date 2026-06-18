@@ -4,8 +4,6 @@ import emailjs from "@emailjs/browser";
 import { SERVICES } from "@/lib/site";
 import { toast } from "sonner";
 
-const SERVICE_ID = "service_u2p53ci";
-const TEMPLATE_ID = "template_hrhl9mk";
 const PUBLIC_KEY = "LomrHrsHF6Wsyv35E";
 
 export function ConsultationForm({ compact = false }: { compact?: boolean }) {
