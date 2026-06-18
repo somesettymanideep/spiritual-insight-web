@@ -42,7 +42,7 @@ export default function ContactPage() {
               <MessageCircle className="h-5 w-5" /> Chat on WhatsApp
             </a>
           </div>
-          <ConsultationForm />
+          <ConsultationForm serviceId="service_u2p53ci" templateId="template_inge0j4" />
         </div>
       </section>
 
