@@ -4,11 +4,11 @@ import emailjs from "@emailjs/browser";
 import { SERVICES } from "@/lib/site";
 import { toast } from "sonner";
 
-const SERVICE_ID = "service_1k4e6hr";
-const TEMPLATE_ID = "template_hrhl9mk";
+const SERVICE_ID = "service_u2p53ci";
+const TEMPLATE_ID = "template_inge0j4";
 const PUBLIC_KEY = "LomrHrsHF6Wsyv35E";
 
-export function ConsultationForm({ compact = false }: { compact?: boolean }) {
+export function ContactForm() {
   const formRef = useRef<HTMLFormElement>(null);
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -22,11 +22,11 @@ export function ConsultationForm({ compact = false }: { compact?: boolean }) {
         publicKey: PUBLIC_KEY,
       });
       setSent(true);
-      toast.success("Request sent — we'll call you shortly");
+      toast.success("Message sent — we'll get back to you shortly");
       formRef.current.reset();
       setTimeout(() => setSent(false), 4000);
     } catch (err) {
-      console.error("EmailJS consultation error:", err);
+      console.error("EmailJS contact error:", err);
       toast.error("Failed to send. Please try again or contact us directly.");
     } finally {
       setLoading(false);
@@ -37,7 +37,7 @@ export function ConsultationForm({ compact = false }: { compact?: boolean }) {
     <form
       ref={formRef}
       onSubmit={onSubmit}
-      className={`glass-light rounded-2xl p-6 md:p-8 shadow-elegant space-y-4 ${compact ? "" : ""}`}
+      className="glass-light rounded-2xl p-6 md:p-8 shadow-elegant space-y-4"
     >
       <div className="grid gap-4 md:grid-cols-2">
         <Input label="Full Name" name="name" required />
@@ -75,9 +75,9 @@ export function ConsultationForm({ compact = false }: { compact?: boolean }) {
         {loading ? (
           <><Loader2 className="h-5 w-5 animate-spin" /> Sending...</>
         ) : sent ? (
-          <><CheckCircle2 className="h-5 w-5" /> Request Sent — We'll call you</>
+          <><CheckCircle2 className="h-5 w-5" /> Message Sent</>
         ) : (
-          <><Send className="h-4 w-4" /> Book Consultation</>
+          <><Send className="h-4 w-4" /> Send Message</>
         )}
       </button>
     </form>

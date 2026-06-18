@@ -318,7 +318,7 @@ function Consultation() {
             ))}
           </ul>
         </div>
-        <ConsultationForm serviceId="service_1k4e6hr" templateId="template_hrhl9mk" />
+        <ConsultationForm />
       </div>
     </section>
   );

@@ -1,6 +1,6 @@
 import { MapPin, Mail, Phone, MessageCircle } from "lucide-react";
 import { SiteLayout, PageHero } from "@/components/SiteLayout";
-import { ConsultationForm } from "@/components/ConsultationForm";
+import { ContactForm } from "@/components/ContactForm";
 import { SITE } from "@/lib/site";
 
 export default function ContactPage() {
@@ -42,7 +42,7 @@ export default function ContactPage() {
               <MessageCircle className="h-5 w-5" /> Chat on WhatsApp
             </a>
           </div>
-          <ConsultationForm serviceId="service_u2p53ci" templateId="template_inge0j4" />
+          <ContactForm />
         </div>
       </section>
 
