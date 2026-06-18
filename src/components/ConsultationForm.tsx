@@ -6,7 +6,15 @@ import { toast } from "sonner";
 
 const PUBLIC_KEY = "LomrHrsHF6Wsyv35E";
 
-export function ConsultationForm({ compact = false }: { compact?: boolean }) {
+export function ConsultationForm({
+  compact = false,
+  serviceId = "service_u2p53ci",
+  templateId = "template_hrhl9mk",
+}: {
+  compact?: boolean;
+  serviceId?: string;
+  templateId?: string;
+}) {
   const formRef = useRef<HTMLFormElement>(null);
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -16,7 +24,7 @@ export function ConsultationForm({ compact = false }: { compact?: boolean }) {
     if (!formRef.current || loading) return;
     setLoading(true);
     try {
-      await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, {
+      await emailjs.sendForm(serviceId, templateId, formRef.current, {
         publicKey: PUBLIC_KEY,
       });
       setSent(true);
