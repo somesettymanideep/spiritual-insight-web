@@ -47,7 +47,7 @@ export function Footer() {
       <div className="relative border-t border-white/10 py-4 px-6 md:px-8 lg:px-10 text-center text-xs text-white/50">
         DISCLAIMER: There are no guarantees that every person using this service will get their desired results for sure. Astrological results depend on a lot of factors and the results may vary from person to person.
       </div>
-      <div className="relative py-5 px-6 md:px-8 lg:px-10 text-sm text-white/60 flex flex-col md:flex-row items-center justify-between gap-2">
+      <div className="relative border-t border-white/10 py-5 px-6 md:px-8 lg:px-10 text-sm text-white/60 flex flex-col md:flex-row items-center justify-between gap-2">
         <div>© 2026 {SITE.name}. All Rights Reserved.</div>
         <div>Designed and developed by <a href="https://www.ayrondigitalsolutions.com" target="_blank" rel="noopener noreferrer" className="font-bold text-white hover:text-gold underline underline-offset-2">Ayrondigitalsolutions</a></div>
       </div>
