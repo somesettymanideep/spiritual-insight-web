@@ -4,6 +4,7 @@ import { Phone, Calendar, Check, Star, ArrowRight, Sparkles, Clock, Users } from
 import { SiteLayout } from "@/components/SiteLayout";
 import { StarField } from "@/components/StarField";
 import { ConsultationForm } from "@/components/ConsultationForm";
+import { ConsultationPopup } from "@/components/ConsultationPopup";
 import { SITE, SERVICES, TESTIMONIALS } from "@/lib/site";
 import aboutImg from "@/assets/main-astrologer.webp.asset.json";
 import jupiterAsset from "@/assets/jupiter.webp.asset.json";
@@ -15,6 +16,7 @@ const HERO_VIDEO = "https://res.cloudinary.com/dzj6s8hha/video/upload/v178133480
 export default function HomePage() {
   return (
     <SiteLayout>
+      <ConsultationPopup />
       <Hero />
       <About />
       <Services />
