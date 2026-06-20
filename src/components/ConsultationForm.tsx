@@ -37,7 +37,7 @@ export function ConsultationForm({ compact = false }: { compact?: boolean }) {
     <form
       ref={formRef}
       onSubmit={onSubmit}
-      className={`glass-light rounded-2xl p-6 md:p-8 shadow-elegant space-y-4 ${compact ? "" : ""}`}
+      className={`glass-light rounded-2xl p-5 md:p-6 shadow-elegant space-y-4 ${compact ? "" : ""}`}
     >
       <div className="grid gap-4 md:grid-cols-2">
         <Input label="Full Name" name="name" required />

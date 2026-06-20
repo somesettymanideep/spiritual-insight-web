@@ -28,11 +28,11 @@ export function ConsultationPopup() {
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-cosmos/70 backdrop-blur-sm animate-fade-in"
+      className="fixed inset-0 z-[100] flex items-center justify-center p-4 animate-fade-in"
       onClick={() => setOpen(false)}
     >
       <div
-        className="relative w-full max-w-2xl max-h-[92vh] overflow-y-auto rounded-3xl bg-background shadow-elegant animate-fade-up"
+        className="relative w-full max-w-lg max-h-[92vh] overflow-y-auto rounded-3xl bg-background shadow-elegant animate-fade-up"
         onClick={(e) => e.stopPropagation()}
       >
         <button
@@ -43,14 +43,14 @@ export function ConsultationPopup() {
         >
           <X className="h-5 w-5" />
         </button>
-        <div className="p-6 md:p-8">
+        <div className="p-5 md:p-6">
           <div className="text-center mb-5">
             <span className="inline-flex items-center gap-2 rounded-full bg-gradient-primary text-primary-foreground px-4 py-1.5 text-xs font-semibold uppercase tracking-wider">
-              <Sparkles className="h-3.5 w-3.5" /> Free Consultation
+              <Sparkles className="h-3.5 w-3.5" />  Consultation
             </span>
-            <h2 className="font-display text-2xl md:text-3xl font-bold mt-3 leading-tight">
-              Get Your <span className="text-gradient-primary">Free Astrology</span> Consultation
-            </h2>
+            {/* <h2 className="font-display text-2xl md:text-3xl font-bold mt-3 leading-tight">
+              Get Your <span className="text-gradient-primary">Astrology</span> Consultation
+            </h2> */}
             <p className="mt-2 text-sm text-muted-foreground">
               Share your problem — our astrologer will reach out within 24 hours.
             </p>
