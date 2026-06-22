@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import HomePage from "./routes/index";
 import AboutPage from "./routes/about";
 import ContactPage from "./routes/contact";
+import PrivacyPolicyPage from "./routes/privacy-policy";
 import ServicesPage from "./routes/services.index";
 import ServiceDetailPage from "./routes/services.$slug";
 import PoojaPrayerPage from "./routes/pooja-prayer.index";
@@ -25,6 +26,7 @@ export default function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/services/:slug" element={<ServiceDetailPage />} />
         <Route path="/pooja-prayer" element={<PoojaPrayerPage />} />
